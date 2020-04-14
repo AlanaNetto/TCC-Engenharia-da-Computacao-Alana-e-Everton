@@ -15,7 +15,7 @@
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{utfpr-pg}
 %%[2013/10/30 v0.9.0 Classe para trabalhos acadêmicos da UTFPR-PG]
-[2014/11/13 v1.0.0 Classe para trabalhos acadêmicos da UTFPR-PG]
+%%[2014/11/13 v1.0.0 Classe para trabalhos acadêmicos da UTFPR-PG]
 %%    entradas do sumário com formatação correta (exceto capitalização)
 %%    referência antes do resumo
 %%    folha de rosto de acordo com a norma
