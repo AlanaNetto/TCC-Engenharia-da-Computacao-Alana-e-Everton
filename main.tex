@@ -44,8 +44,6 @@ placement=tbhp,
 
 \orientador{Dra Veronica Isabela Quandt}
 
-
-
 % informações do PDF
 \makeatletter
 \hypersetup{
@@ -69,48 +67,39 @@ placement=tbhp,
 \imprimircapa
 \imprimirfolhaderosto
 
-%% TO DO - Trocar para termo correto
-%\includepdf[pages=-]{images/termo.pdf}
+% % Termo de aprovação
+% \includepdf[pages=-]{images/termo.pdf}
 
+% % Agradecimentos
+% \input{Textos/Agradecimentos}
 
-\begin{agradecimentos}
-    
-\end{agradecimentos}
- 
-\begin{resumo}
-\refthis{bibli}
+% % Resumo
+% \input{Textos/Resumo}
 
-\textbf{Palavras-chaves}: Lógica de Programação, Educação, Crianças, Jogo, Blocos
-\end{resumo}
+% % Lista de Figuras
+% \listoffigures*
+% \clearpage
 
-\begin{resumo}[Abstract]
-\refthis[en]{bibli}
+% % Lista de tabelas
+% \listoftables*
+% \clearpage
 
-\textbf{Key-Words}: Programming Logic,  Education, Children, Game, Blocs
-\end{resumo}
-
-\pdfbookmark[0]{\listfigurename}{lof}
-\listoffigures*
-\clearpage
-\listoftables*
-\cleardoublepage
-
-\pdfbookmark[0]{\contentsname}{toc}
+% Sumário
 \tableofcontents*
-\cleardoublepage
+\clearpage
 
 \textual
 \pagestyle{simple}
 
 \captionsetup{singlelinecheck = false, justification=raggedright, labelsep=space}
 
-\input{Textos/Cap1.tex}
-\input{Textos/Cap2.tex}
-
+\input{Textos/Cap1}
+\input{Textos/Cap2}
 \clearpage
+
 \addcontentsline{toc}{chapter}{REFÊRENCIAS}
 \bibliography{bibli}
 
-\newpage
+% \newpage
 
 \end{document}
