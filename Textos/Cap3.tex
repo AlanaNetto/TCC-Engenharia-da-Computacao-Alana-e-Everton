@@ -49,11 +49,30 @@
         
     %     \subsubsection{Sociais}
 
-% \section{Análise Funcional e de Requisitos Tecnológicos}
+\section{Análise Funcional e de Requisitos Tecnológicos}
 
-%     \subsection{Lista de Funcionalidade e Atores}
+    \subsection{Lista de Funcionalidade e Atores}
+    O sistema será composto  pelas seguintes funcionalidades:
+    \begin{itemize}
+        \item Desafios de lógica com o tema reciclagem;
+        \item Identificação dos blocos;
+        \item Conversão dos blocos em ações;
+        \item Relatórios de jogo para acompanhamento do professor;
+    \end{itemize}
     
-%     \subsection{Comunicação}
+    O sistema tem como atores a criança e professor/tutor.
+    
+    A criança é responsável pela interação com os blocos e aplicativo.
+    O professor/tutor é responsável pela interação com os dados adquiridos durante a partida da criança.
+    
+    \subsection{Comunicação}
+    A comunicação entre o aplicativo e o servidor ocorrerá de maneira unidirecional e utilizará arquitetura \textit{REST}, através da conexão Wi-Fi com a Internet.
+    A comunicação entre o aplicativo e o servidor ocorre de maneira unidirecional. 
+    O aplicativo envia os dados e imagens para o servidor. Após o servidor salvar os dados e processar as imagens, ele retorna para o aplicativo.
+    
+    \subsubsection{REST}
+    O \textit{REST (Representational State Transfer)} é uma abstração da arquitetura da \textit{Web}. Consistem em regras que permitem a criação de projetos com interfaces bem definidas, permitindo a comunicação entre aplicações.
+    
     
 %     \subsection{Processamento}
     
