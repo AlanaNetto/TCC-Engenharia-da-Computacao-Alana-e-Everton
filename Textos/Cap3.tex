@@ -1,19 +1,77 @@
 \chapter{Especificação técnica} \label{cap:especificacao_tecnica}
 
 \section{Análise de Contexto}
-\subsection{Visão Geral}
-\subsection{Condições Restritivas}
-\subsection{Benefícios e Impactos}
 
-\section{Análise Funcional e de Requisitos Tecnológicos}
-\subsection{Lista de Funcionalidade e Atores}
-\subsection{Comunicação}
-\subsection{Processamento}
-\subsection{Interface Homem-Máquina}
-\subsection{Sistemas Controlados Automaticamente}
-\subsection{Aquisição de dados e Atuação}
+    \subsection{Visão Geral}
+    O desenvolvimento deste protótipo tem a finalidade de auxiliar o professor no ensino de programação para crianças.
+    
+    O software, apresentado em forma de jogo com o tema reciclagem, apresentará diversos desafios em que a criança deverá solucionar criando sequências lógicas com blocos físicos. Após a ordenação dos blocos, de maneira em que achar correta, pela criança, ela deverá tirar fotos da sua solução e submetê-la para a avaliação do desafio dentro do aplicativo.
+    
+    Ao finalizar a captura da solução proposta, o aplicativo enviará a sequência de imagens para um servidor, hospedado na nuvem, o qual fará a análise das imagens dos blocos
+    por meio de visão computacional a fim de identificar e converter os blocos em ações para o jogo.
+    
+    Ao final da conversão, o servidor devolverá para o jogo a solução proposta em ações.
+    Caso a solução esteja correta, a criança passará para o próximo desafio, caso contrário, será oferecido uma nova tentativa.
+    
+    O aplicativo coletará dados durante o desafio para o preenchimento de relatórios que serão apresentados para o professor ou tutor através de um portal.
+    
+    A figura \ref{figura:diagrama_blocos} apresenta a visão geral do sistema proposto.
+    
+    \begin{figure}[h!]
+        \centering
+        \caption{Visão geral do sistema}
+        \includegraphics[width=12cm]{images/cap3/diagrama_blocos.png}
+        \caption*{Fonte:o autor (2020)}
+        \label{figura:diagrama_blocos}
+    \end{figure}
+    
+    % \subsection{Condições Restritivas}
+    
+        % \subsubsection{Custos}
+        
+        % \subsubsection{Físicas e Ambientais}
+        
+        % \subsubsection{Tecnológicas}
+        
+        % \subsubsection{Energização}
+        
+        % \subsubsection{Interferências devido ao meio}
+    
+    % \subsection{Benefícios e Impactos}
+    
+    %     \subsubsection{Econômicos}
+        
+    %     \subsubsection{Operacionais}
+        
+    %     \subsubsection{Estratégicos}
+        
+    %     \subsubsection{Políticos}
+        
+    %     \subsubsection{Sociais}
+
+% \section{Análise Funcional e de Requisitos Tecnológicos}
+
+%     \subsection{Lista de Funcionalidade e Atores}
+    
+%     \subsection{Comunicação}
+    
+%     \subsection{Processamento}
+    
+%     \subsection{Interface Homem-Máquina}
+    
+%     \subsection{Sistemas Controlados Automaticamente}
+    
+%     \subsection{Aquisição de dados e Atuação}
+
 
 \section{Análise da Arquitetura do Sistema}
-\subsection{Hardware}
-\subsection{Software}
+
+    \subsection{Hardware}
+    O hardware do sistema será composto por blocos físicos e o dispositivo mobile com câmera.
+    
+    Os blocos físicos serão construídos de PLA, impressos em 3D, com o tamanho aproximado de 10cm x 10cm x 5cm, seus cantos serão arredondados para evitar acidentes no manuseio. Para facilitar a identificação, além da sua cor, cada bloco possuirá um simbolo representado o tipo da ação.
+    
+    O dispositivo mobile deverá ser um celular \textit{Android} com camêra, podendo variar entre os modelos existentes no mercado.
+    
+    % \subsection{Software}
 
