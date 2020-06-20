@@ -89,7 +89,84 @@
     O aplicativo captura as imagens e as envia para o servidor através da Internet. Após o processamento no servidor, o aplicativo recebe as ações e as transforma em trechos de código para ser executados durante o jogo.
     % Precisa escrever sobre o processamento das imagens, qual tipo de modelo, biblioteca, linguagem etc.
     
-%     \subsection{Interface Homem-Máquina}
+    \subsection{Interface Homem-Máquina}
+    As interações da criança será com os blocos físicos e com o aplicativo.
+    Na tela inicial, é apresentado duas opções, créditos e desafios, como mostra a figura \ref{figura:tela_inicial}.
+    
+    \begin{figure}[h!]
+        \centering
+        \caption{Tela Inicial}
+        \includegraphics[width=12cm]{images/cap3/Tela Inicial.jpg}
+        \caption*{Fonte:o autor (2020)}
+        \label{figura:tela_inicial}
+    \end{figure}
+    
+    Ao acessar a opção de desafios é apresentado a lista de todos os desafios disponíveis, juntamente com o progresso de cada desafio (se disponível), conforme apresentado na figura \ref{figura:tela_desafios}
+    
+    \begin{figure}[h!]
+        \centering
+        \caption{Tela de Desafios}
+        \includegraphics[width=12cm]{images/cap3/tela_desafios.jpg}
+        \caption*{Fonte:o autor (2020)}
+        \label{figura:tela_desafios}
+    \end{figure}
+    
+    Nessa tela, é possível ver a lista de desafios, um desafio só poderá ser iniciado caso o anterior tenha sido resolvido.
+    É possível clicar no botão voltar para retornar a tela anterior.
+    Ao clicar no botão iniciar do desafio, a criança poderá ser direcionada para a tela de cadastro ou direto para a tela do desafio.
+    Caso a criança não tenha preenchido as informações para identificá-la, essas informações serão coletadas em uma tela específica, conforme figura \ref{figura:cadastro}. Caso contrario ela é direcionada para a tela que contém o desafio a ser solucionado.
+    
+    \begin{figure}[h!]
+        \centering
+        \caption{Tela de Cadastro}
+        \includegraphics[width=12cm]{images/cap3/informacoes_usuario.jpg}
+        \caption*{Fonte:o autor (2020)}
+        \label{figura:cadastro}
+    \end{figure}
+    
+    A figura \ref{figura:tela_jogo} mostra a interface principal durante o jogo.
+    
+    \begin{figure}[h!]
+        \centering
+        \caption{Tela do Jogo}
+        \includegraphics[width=12cm]{images/cap3/tela_jogo.jpg}
+        \caption*{Fonte:o autor (2020)}
+        \label{figura:tela_jogo}
+    \end{figure}
+    
+    Nessa tela é possível executar duas ações.
+    Clicando no botão voltar, a criança é redirecionada para a lista de desafios.
+    Selecionando o botão Fotografar Solução, é aberto uma janela, conforme figura \ref{figura:fotografar_blocos} para fotografar a solução.
+    
+    \begin{figure}[h!]
+        \centering
+        \caption{Tela para fotografar solução}
+        \includegraphics[width=12cm]{images/cap3/Fotografar_blocos.jpg}
+        \caption*{Fonte:o autor (2020)}
+        \label{figura:fotografar_blocos}
+    \end{figure}
+    
+    Cada bloco deve ser fotografado e adicionado utilizando o botão Novo Bloco.
+    Ao fotografar todos os blocos, pode-se clicar no botão enviar para que a solução seja processada.
+    Após a conversão das fotos em ações para o jogo, o usuário é direcionado para a tela de jogo, onde as ações convertidas serão executadas.
+    Caso a solução seja a correta e o personagem chegue na lixeira correta, será apresentado uma mensagem de sucesso, conforme figura \ref{figura:solucao_correta}. Caso contrário, será apresentado a mensagem de falha, permitindo uma nova tentativa, figura \ref{figura:solucao_incorreta}.
+    
+    \begin{figure}[h!]
+        \centering
+        \caption{Mensagem de solução correta}
+        \includegraphics[width=12cm]{images/cap3/solucao_correta.jpg}
+        \caption*{Fonte:o autor (2020)}
+        \label{figura:solucao_correta}
+    \end{figure}
+    
+    \begin{figure}[h!]
+        \centering
+        \caption{Mensagem de solução incorreta}
+        \includegraphics[width=12cm]{images/cap3/solucao_incorreta.jpg}
+        \caption*{Fonte:o autor (2020)}
+        \label{figura:solucao_incorreta}
+    \end{figure}
+    
     
     \subsection{Sistemas Controlados Automaticamente}
     O Sistema não apresentará sistemas controlados automaticamente.
@@ -112,4 +189,4 @@
     O dispositivo mobile deverá ser um celular \textit{Android} com câmera, podendo variar entre os modelos existentes no mercado.
     
     % \subsection{Software}
-
+   
