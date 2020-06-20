@@ -188,5 +188,72 @@
     
     O dispositivo mobile deverá ser um celular \textit{Android} com câmera, podendo variar entre os modelos existentes no mercado.
     
-    % \subsection{Software}
+    \subsection{Software}
+     No tópico a seguir, são apresentados os diagramas do software.
+        
+        \subsubsection{DER/MER}
+        O diagrama apresentado na figura \ref{figura:der_mer} mostra os relacionamentos entre os objetos do sistema, juntamente com seus atributos.
+        
+        \begin{figure}[h!]
+            \centering
+            \caption{Use Case}
+            \includegraphics[width=12cm]{images/cap3/MER_DER.jpg}
+            \caption*{Fonte:o autor (2020)}
+            \label{figura:der_mer}
+        \end{figure}
+        
+        O banco de dados possuirá dois esquemas de documentos, um para representar a criança e outro para representar a resolução do desafio.
+        O esquema da criança, possui obrigatoriamente os atributos de Nome e Idade, podendo ser complementado com mais informações caso necessário.
+        O esquema para a resolução do desafio, possui os seguintes atributos:
+        
+        \begin{itemize}
+            \item Numero, representando o numero do desafio.
+            \item Tempo, representando o tempo que a criança levou para submeter a solução.
+            \item Esta Correta, representando se a solução apresentada está correta ou não.
+            \item Blocos, representando os blocos que foram utilizados.
+        \end{itemize} 
+        
+        \subsubsection{Use Case}
+        O Aplicativo conta com funções de identificação da criança (Perfil), Inicio de desafio e submissão de solução, conforme apresentado no diagrama de caso de uso na figura \ref{figura:use_case}.
+        
+        \begin{figure}[h!]
+            \centering
+            \caption{Use Case}
+            \includegraphics[width=8cm]{images/cap3/Use Case.jpg}
+            \caption*{Fonte:o autor (2020)}
+            \label{figura:use_case}
+        \end{figure}
+        
+        \subsubsection{Diagramas de Sequência}
+        
+        Nesse tópico será apresentado os diagramas de sequencia para as funcionalidades principais do aplicativo.
+        
+        \subsubsubsection{Criação de Perfil}
+        
+        A figura \ref{figura:sequencia_perfil} mostra o diagrama de sequência para a realização do cadastro de informações da criança. Todas as informações são salvas localmente e em um banco de dados na nuvem.
+        
+        \begin{figure}[h!]
+            \centering
+            \caption{Diagrama de Sequência - Perfil}
+            \includegraphics[width=12cm]{images/cap3/Sequencia_Perfil.jpg}
+            \caption*{Fonte:o autor (2020)}
+            \label{figura:sequencia_perfil}
+        \end{figure}
+        
+        \subsubsubsection{Submissão da Resolução}
+        
+        O diagrama apresentado na figura \ref{figura:sequencia_jogo} mostra o processo de submissão da solução e validação da mesma.
+        
+        \begin{figure}[h!]
+            \centering
+            \caption{Diagrama de Sequência - Submissão da Resolução}
+            \includegraphics[width=14cm]{images/cap3/Sequencia_Jogo.jpg}
+            \caption*{Fonte:o autor (2020)}
+            \label{figura:sequencia_jogo}
+        \end{figure}
+        
+        Ao iniciar o desafio, a data e hora são salvos localmente para que, quando a resolução for submetida, essa informação seja salva junto com as demais no banco de dados.
+        Após o aplicativo processar as ações convertidas pelo algoritmo de identificação dos blocos, o aplicativo valida a solução e atualiza a resolução no banco com o seu status, correto ou não correto.
+        
+        
    
