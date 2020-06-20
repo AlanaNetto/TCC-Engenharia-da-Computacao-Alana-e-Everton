@@ -32,8 +32,10 @@
 \RequirePackage{etoolbox}
 \RequirePackage{multibib}
 \RequirePackage[within=none]{newfloat}
-\newcommand\utfpr{Universidade Positivo}
 \newcommand*\erro[1]{\@latex@error{Defina \noexpand#1!}\@ehc}
+
+\providecommand\imprimiruniversidade{\erro\universidade}
+\newcommand*\universidade[1]{\renewcommand{\imprimiruniversidade}{#1}}
 
 \providecommand\imprimircurso{\erro\curso}
 \newcommand*\curso[1]{\renewcommand{\imprimircurso}{#1}}
@@ -52,7 +54,7 @@
 \renewcommand{\imprimircapa}{
         \begin{capa}
           \center
-          {\large\MakeUppercase\utfpr}\par
+          {\large\MakeUppercase\imprimiruniversidade}\par
           {\large\MakeUppercase\imprimirdepartamento}\par
           {\large\MakeUppercase\imprimircurso}\par
           \vfill
@@ -80,18 +82,18 @@
     \abntex@ifnotempty{\imprimirpreambulo}{%
       \hspace{.45\textwidth}
       \begin{minipage}{.5\textwidth}
-       \SingleSpacing
+      \SingleSpacing
          \imprimirpreambulo
          \par
          \par
          \imprimirorientadorRotulo~\imprimirorientador\par
-       \end{minipage}%
-       \vspace*{\fill}
+      \end{minipage}%
+      \vspace*{\fill}
     }%
 
   
     \abntex@ifnotempty{\imprimircoorientador}{%
-       {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
+      {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
     }%
     \vspace*{\fill}
 
