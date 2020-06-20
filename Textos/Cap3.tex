@@ -83,7 +83,11 @@
         O \textit{REST (Representational State Transfer)} é uma abstração da arquitetura da \textit{Web}. Consistem em regras que permitem a criação de projetos com interfaces bem definidas, permitindo a comunicação entre aplicações.
     
     
-    % \subsection{Processamento}
+    \subsection{Processamento}
+    O processamento por parte do Software, ocorre no aplicativo e no servidor.
+    O servidor recebe as imagens enviadas pelo aplicativo e passa cada uma pelo algoritmo de visão computacional, responsável pela identificação de cada bloco nas fotos. Após a identificação dos blocos, ele salva no banco de dados e retorna para o aplicativo as ações a serem executadas.
+    O aplicativo captura as imagens e as envia para o servidor através da Internet. Após o processamento no servidor, o aplicativo recebe as ações e as transforma em trechos de código para ser executados durante o jogo.
+    % Precisa escrever sobre o processamento das imagens, qual tipo de modelo, biblioteca, linguagem etc.
     
 %     \subsection{Interface Homem-Máquina}
     
