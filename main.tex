@@ -1,108 +1,108 @@
-\documentclass{utfpr-pg}
+%  -----------------------------------------------------------------------
+% |                Modelo de documento Latex para TCC do                  |
+% |     curso de Engenharia da Computação da Universidade Positivo        |
+%  -----------------------------------------------------------------------
+% |     Produção: Eduardo J Alberti      Revisão: Veronica I. Quandt      |
+%  -----------------------------------------------------------------------
 
-\usepackage{cmap}
-\usepackage[T1]{fontenc}
-\usepackage{graphicx}
-\usepackage{latexsym}
-\usepackage{amssymb}
-\usepackage{lipsum}
-\usepackage{pdfpages}
+\documentclass{TCC_UP}
+
+% \usepackage[section]{placeins}
 \usepackage{float}
-\usepackage{color,soul}
-\usepackage{xcolor}
-\usepackage{adjustbox}
-\usepackage{quoting}
-\usepackage{tocloft}
-\usepackage[font=small,labelfont=bf]{caption}
 
+%  -----------------------------------------------------------------------
+% |                 Informações para construção da Capa                   |
+% |           Título, Autores, Orientador, Universidade e Ano             |
+%  -----------------------------------------------------------------------
 
+\instituicao{Universidade Positivo} 
+    \local{Curitiba}
 
-\cftsetindents{section}{0em}{1.2cm}
-\cftsetindents{subsection}{0em}{0.85cm}
-\cftsetindents{subsubsection}{0cm}{0.65cm}
-\cftsetindents{chapter}{0pt}{1.7cm}
-
-\makeatletter
-
-\renewcommand*\l@chapter{\@dottedtocline{0}{0em}{1.5cm}}
-\makeatother
-
-\graphicspath{{Imagens/}}
-
-\DeclareFloatingEnvironment[
-fileext=lod,
-listname=Lista de Definições,
-name=Definição,
-placement=tbhp,
-]{definicao}
-
-\universidade{Universidade Positivo}
-\curso{Engenharia da Computação}
-\autor{ Alana Mafra Netto  \\  Everton Henrique Carneiro }
 \titulo{Aplicativo para ensino de lógica de programação utilizando visão computacional}
-\local{Curitiba}
-\data{2020}
-\preambulo{Monografia apresentada como requisito parcial de aprovação da disciplina de Trabalho de Conclusão de Curso de Engenharia da Computação da Universidade.\break}
+    \tipotrabalho{Monografia}
+    \data{2020}
+    %\TipoPesquisa % Descomentar essa linha para projetos de Pesquisa
+
+\autor{ Alana Mafra Netto  \\  Everton Henrique Carneiro }
+    \curso{Engenharia da Computação}
+    \escola{Escola Politécnica}
+    
 \orientador{Dra Veronica Isabela Quandt}
+%\coorientador{Nome do Coorientador} % Descomentar se necessário
 
-% informações do PDF
+\preambulo{Monografia apresentada como requisito parcial de aprovação da disciplina de Trabalho de Conclusão de Curso de \imprimircurso  da Universidade Positivo}
+
 \makeatletter
-\hypersetup{
-        % pagebackref=true,
-        pdftitle={\@title},
-        pdfauthor={\@author},
-        pdfsubject={\imprimirpreambulo},
-        pdfcreator={LaTeX with abnTeX2},
-        colorlinks=false,
-}
+\hypersetup{pdftitle={\@title}, pdfauthor={\@author},         
+            pdfsubject={\imprimirpreambulo},
+            pdfkeywords={\imprimircurso}{\imprimirinstituicao}{TCC}, colorlinks=false,bookmarksdepth=4}
 \makeatother
-
-% Controle do espaçamento entre um parágrafo e outro:
-\setlength{\parskip}{0.1cm}  % tente também \onelineskip
-
 \makeindex
+
 \begin{document}
-% Retira espaço extra obsoleto entre as frases.
-\frenchspacing
+    \pretextual
+    \selectlanguage{brazil}
+    \frenchspacing 
 
-\imprimircapa
+%  -----------------------------------------------------------------------
+% |                 Imprime a Capa e a Folha de Rosto                     |
+%  -----------------------------------------------------------------------
+    \imprimircapa
+    \imprimirfolhaderosto
 
-\imprimirfolhaderosto
+%  -----------------------------------------------------------------------
+% |                          Folha de Aprovação                           |
+%  -----------------------------------------------------------------------
+% | Na versão final do trabalho, a ser entregue correção de considerações |
+% |  da banca de avaliação, será necessário incluir a Folha de Aprovação. |
+% |   A Folha de Aprovação será cedida pela coordenação de TCC e poderá   |
+% |               ser incluída por meio do comando abaixo.                |
+%  -----------------------------------------------------------------------
+    
+    % \includepdf{Folha_de_Aprovacao.pdf}
 
-% % Termo de aprovação
-% \includepdf[pages=-]{images/termo.pdf}
+%  -----------------------------------------------------------------------
+% |                        Elementos Opcionais                            |
+%  -----------------------------------------------------------------------
 
-% % Agradecimentos
-% \input{Textos/Agradecimentos}
+    \input{Textos/Opcionais}
 
-% % Resumo
-% \input{Textos/Resumo}
+%  -----------------------------------------------------------------------
+% |                              Resumo                                   |
+%  -----------------------------------------------------------------------
+    
+    \input{Textos/Resumo}
 
-% Lista de Figuras
-\listoffigures*
-\clearpage
+%  -----------------------------------------------------------------------
+% |                         Listas Opcionais                              |
+%  -----------------------------------------------------------------------
+    
+    \input{Listas}
 
-% % Lista de tabelas
-% \listoftables*
-% \clearpage
+%  -----------------------------------------------------------------------
+% |                           Cria Sumário                                |
+%  -----------------------------------------------------------------------
+    \pdfbookmark[0]{\contentsname}{toc}
+    \tableofcontents*
+    \cleardoublepage
+    
+    \textual
+    \pagestyle{simple}
 
-% Sumário
-\tableofcontents*
-\clearpage
+%  -----------------------------------------------------------------------
+% |                              Capítulos                                |
+%  -----------------------------------------------------------------------
+    
+    \include{Textos/Cap1}
+    \include{Textos/Cap2}
+    \include{Textos/Cap3}
+    
+    \phantompart
 
-\textual
-\pagestyle{simple}
+    \postextual
+    \bibliography{Bibliografia}
 
-\captionsetup{singlelinecheck = false, justification=raggedright, labelsep=space}
-
-\input{Textos/Cap1}
-\input{Textos/Cap2}
-\input{Textos/Cap3}
-\clearpage
-
-\addcontentsline{toc}{chapter}{REFÊRENCIAS}
-\bibliography{bibli}
-
-% \newpage
+    \include{Textos/Apendice}
+    \include{Textos/Anexo}
 
 \end{document}
