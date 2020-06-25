@@ -21,9 +21,8 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
   
     \begin{figure}[H]
         \caption{Visão geral do sistema}
-        \begin{center}
-            \includegraphics[width=\linewidth]{Imagens/cap3/diagrama_blocos.png}
-        \end{center}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/cap3/diagrama_blocos.png}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:diagrama_blocos}
     \end{figure}
@@ -86,16 +85,16 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     
     \subsection{Comunicação}
     A comunicação entre o aplicativo e o servidor ocorrerá de maneira unidirecional e utilizará arquitetura \textit{REST}, através da conexão Wi-Fi com a Internet.
-    O aplicativo envia os dados e imagens para o servidor. Após o servidor salvar os dados e processar as imagens, ele retorna para o aplicativo.
+    O aplicativo envia os dados e imagens para o servidor. Após o servidor salvar os dados e processar as imagens, ele retorna as ações a serem executadas para o aplicativo.
     
         \subsubsection{REST}
         O \textit{REST (Representational State Transfer)} é uma abstração da arquitetura da \textit{Web}. Consistem em regras que permitem a criação de projetos com interfaces bem definidas, permitindo a comunicação entre aplicações.
     
-    
     \subsection{Processamento}
     O processamento por parte do Software, ocorre tanto no aplicativo quanto no servidor.
-    O servidor recebe as imagens enviadas pelo aplicativo e passa cada uma pelo algoritmo de visão computacional, responsável pela identificação de cada bloco nas fotos. Após a identificação dos blocos, ele salva no banco de dados e retorna para o aplicativo as ações a serem executadas.
-    O aplicativo captura as imagens e as envia para o servidor através da Internet. Após o processamento no servidor, o aplicativo recebe as ações e as transforma em trechos de código para ser executados durante o jogo.
+    O aplicativo captura as imagens e as envia para o servidor através da Internet.
+    O servidor recebe as imagens enviadas pelo aplicativo e passa cada uma pelo algoritmo de visão computacional, responsável pela identificação de cada bloco nas fotos. Após a identificação dos blocos, é salvo a sequencia no banco de dados e as ações são enviadas para o aplicativo.
+    Após receber o retorno com as ações, o aplicativo transforma as ações em código e executa o mesmo durante o jogo.
     % Precisa escrever sobre o processamento das imagens, qual tipo de modelo, biblioteca, linguagem etc.
     
     \subsection{Interface Homem-Máquina}
@@ -104,9 +103,8 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     
     \begin{figure}[H]
         \caption{Tela Inicial}
-        \begin{center}
-            \includegraphics[width=\linewidth]{Imagens/cap3/Tela Inicial.jpg}
-        \end{center}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/cap3/Tela Inicial.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:tela_inicial}
     \end{figure}
@@ -115,9 +113,8 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     
     \begin{figure}[H]
         \caption{Tela de Desafios}
-        \begin{center}
-            \includegraphics[width=\linewidth]{Imagens/cap3/tela_desafios.jpg}
-        \end{center}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/cap3/tela_desafios.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:tela_desafios}
     \end{figure}
@@ -129,9 +126,8 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     
     \begin{figure}[H]
         \caption{Tela de Cadastro}
-        \begin{center}
-            \includegraphics[width=\linewidth]{Imagens/cap3/informacoes_usuario.jpg}
-        \end{center}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/cap3/informacoes_usuario.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:cadastro}
     \end{figure}
@@ -140,9 +136,8 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     
     \begin{figure}[H]
         \caption{Tela do Jogo}
-        \begin{center}
-            \includegraphics[width=\linewidth]{Imagens/cap3/tela_jogo.jpg}
-        \end{center}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/cap3/tela_jogo.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:tela_jogo}
     \end{figure}
@@ -152,10 +147,9 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     Selecionando o botão Fotografar Solução, é aberto uma janela, conforme Figura \ref{figura:fotografar_blocos} para fotografar a solução.
     
     \begin{figure}[H]
-        \caption{Tela para fotografar solução}
-        \begin{center}
-            \includegraphics[width=\linewidth]{Imagens/cap3/Fotografar_blocos.jpg}
-        \end{center}
+        \caption{Tela para fotografar a solução}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/cap3/UploadSolucao.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:fotografar_blocos}
     \end{figure}
@@ -167,18 +161,16 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     
     \begin{figure}[H]
         \caption{Mensagem de solução correta}
-        \begin{center}
-            \includegraphics[width=\linewidth]{Imagens/cap3/solucao_correta.jpg}
-        \end{center}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/cap3/solucao_correta.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:solucao_correta}
     \end{figure}
     
     \begin{figure}[H]
         \caption{Mensagem de solução incorreta}
-        \begin{center}
-            \includegraphics[width=\linewidth]{Imagens/cap3/solucao_incorreta.jpg}
-        \end{center}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/cap3/solucao_incorreta.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:solucao_incorreta}
     \end{figure}
@@ -188,10 +180,19 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     O Sistema não apresentará sistemas controlados automaticamente.
     
     \subsection{Aquisição de dados e Atuação}
-    A coleta das fotos se dará através da ação da criança que está jogando. Após concluir a proposta de solução do desafio, a mesma deve capturar sua proposta utilizando a câmera do dispositivo móvel.
-    Após a captura das imagens a criança, utilizando um botão de envio, enviará as fotos para o servidor, onde as fotos serão processadas e transformadas em ações para o jogo.
+    A coleta das fotos se dará através da ação da criança que está jogando. Após concluir a proposta de solução do desafio, a mesma deve capturar sua proposta utilizando a câmera do dispositivo móvel, como mostrado na Figura \ref{figura:crianca_blocos}
     
-    O envio das fotos e o recebimento da conversão em ações do jogo é realizado através de conexão com a Internet.
+    \begin{figure}[H]
+        \caption{Criança capturando a solução}
+        \centering
+        \includegraphics[width=10cm]{Imagens/cap3/CriançaBlocos.jpg}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:crianca_blocos}
+    \end{figure}
+    
+    Após a captura da imagem, a criança, utilizando um botão de envio, enviará a foto para o servidor, onde ela será e transformada em ações para o jogo.
+    
+    O envio da foto e o recebimento da conversão em ações do jogo é realizado através de conexão com a Internet.
     Toda proposta de solução, esteja ela correta ou não, será salva no banco de dados, após sua interpretação, para gerar relatórios estatísticos.
 
 
@@ -215,41 +216,44 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     
     As ações são divididas em dois tipos:
     
-    \subsubsection{Ações Diretas}
-    As ações diretas são andar, apresentado na Figura \ref{figura:andar}, e girar 90 graus, apresentado na Figura \ref{figura:girar}. Ao identificar esse bloco, o código irá executar a ação escolhida.
-    
-    \begin{figure}[H]
-        \caption{Andar}
-        \centering
-        \includegraphics[width=5cm]{Imagens/cap3/Ande.png}
-        \legend{\small{Fonte: o autor (2020)}}
-        \label{figura:andar}
-    \end{figure}
-    
-    \begin{figure}[H]
-        \caption{Gire 90 graus}
-        \centering
-        \includegraphics[width=5cm]{Imagens/cap3/Gire.png}
-        \legend{\small{Fonte: o autor (2020)}}
-        \label{figura:girar}
-    \end{figure}
-    
-    \subsubsection{Ação de Repetição}
-    A ação de repetição, mostrada na Figura \ref{figura:repita}, possibilitará uma otimização do código, visto que, ao identificar esse bloco, criará um loop e executará as ações contidas dentro dele.
-    
-    \begin{figure}[H]
-        \caption{Repita}
-        \centering
-        \includegraphics[width=5cm]{Imagens/cap3/Repita.png}
-        \legend{\small{Fonte: o autor (2020)}}
-        \label{figura:repita}
-    \end{figure}
+        \subsubsection{Ações Diretas}
+        As ações diretas são andar, apresentado na Figura \ref{figura:andar}, e girar 90 graus, apresentado na Figura \ref{figura:girar}. Ao identificar esse bloco, o código irá executar a ação escolhida.
+        
+        \begin{figure}[H]
+            \caption{Andar}
+            \centering
+            \includegraphics[width=5cm]{Imagens/cap3/Ande.png}
+            \legend{\small{Fonte: o autor (2020)}}
+            \label{figura:andar}
+        \end{figure}
+        
+        \begin{figure}[H]
+            \caption{Gire 90 graus}
+            \centering
+            \includegraphics[width=5cm]{Imagens/cap3/Gire.png}
+            \legend{\small{Fonte: o autor (2020)}}
+            \label{figura:girar}
+        \end{figure}
+        
+        \subsubsection{Ação de Repetição}
+        A ação de repetição, mostrada na Figura \ref{figura:repita}, possibilitará uma otimização do código, visto que, ao identificar esse bloco, criará um loop e executará as ações contidas dentro dele.
+        
+        \begin{figure}[H]
+            \caption{Repita}
+            \centering
+            \includegraphics[width=5cm]{Imagens/cap3/Repita.png}
+            \legend{\small{Fonte: o autor (2020)}}
+            \label{figura:repita}
+        \end{figure}
     
     \subsection{Software}
-     No tópico a seguir, são apresentados os diagramas do software que representam o seu funcionamento.
+    A arquitetura do software será baseada em serviços cloud e mobile. Para o ambiente cloud, será utilizado a IBM Cloud como provedor.
+    O servidor, programado em Python, utilizará um serviço \textit{PAAS (Platform as a Service)} chamado Cloud Foundry. O banco de dados, não relacional, utilizará o serviço IBM Cloudant desenvolvido no Apache CouchDB que utiliza JSON para armazenar os dados.
+    
+    Nos tópicos a seguir, são apresentados os diagramas do software que representam o seu funcionamento.
         
         \subsubsection{DER/MER}
-        O diagrama apresentado na Figura \ref{figura:der_mer} mostra os relacionamentos entre os objetos do sistema, juntamente com seus atributos.
+        O diagrama apresentado na Figura \ref{figura:der_mer} mostra os relacionamentos entre os esquemas do sistema, crianca e resolucao\_desafio, juntamente com seus atributos, nome, idade, numero, tempo, esta correta e blocos.
         
         \begin{figure}[H]
             \caption{Diagrama Entidade Relacionamento}
@@ -260,7 +264,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \end{figure}
         
         O banco de dados possuirá dois esquemas de documentos, um para representar a criança e outro para representar a resolução do desafio.
-        O esquema da criança, possui obrigatoriamente os atributos de Nome e Idade, podendo ser complementado com mais informações caso necessário.
+        O esquema da criança, possui obrigatoriamente os atributos de Nome e Idade.
         O esquema para a resolução do desafio, possui os seguintes atributos:
         
         \begin{itemize}
@@ -275,9 +279,9 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         
         \begin{figure}[H]
             \caption{Use Case}
-            \begin{center}
+            \centering
                 \includegraphics[width=\linewidth]{Imagens/cap3/Use Case.jpg}
-            \end{center}
+    
             \legend{\small{Fonte: o autor (2020)}}
             \label{figura:use_case}
         \end{figure}
@@ -292,9 +296,9 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         
         \begin{figure}[H]
             \caption{Diagrama de Sequência - Perfil}
-            \begin{center}
+            \centering
                 \includegraphics[width=\linewidth]{Imagens/cap3/Sequencia_Perfil.jpg}
-            \end{center}
+    
             \legend{\small{Fonte: o autor (2020)}}
             \label{figura:sequencia_perfil}
         \end{figure}
@@ -305,9 +309,9 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         
         \begin{figure}[H]
             \caption{Diagrama de Sequência - Submissão da Resolução}
-            \begin{center}
+            \centering
                 \includegraphics[width=\linewidth]{Imagens/cap3/Sequencia_Jogo.jpg}
-            \end{center}
+    
             \legend{\small{Fonte: o autor (2020)}}
             \label{figura:sequencia_jogo}
         \end{figure}
