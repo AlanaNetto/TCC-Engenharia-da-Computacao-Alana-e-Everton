@@ -201,9 +201,49 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     \subsection{Hardware}
     O hardware do sistema será composto por blocos físicos e o dispositivo mobile com câmera.
     
-    Os blocos físicos serão construídos de PLA, impressos em 3D, com o tamanho aproximado de 10cm x 10cm x 5cm, seus cantos serão arredondados para evitar acidentes no manuseio. Para facilitar a identificação, além da sua cor, cada bloco possuirá um simbolo representado o tipo da ação.
-    
     O dispositivo mobile deverá ser um celular \textit{Android} com câmera, podendo variar entre os modelos existentes no mercado.
+    
+    Os blocos físicos serão construídos de PLA, impressos em 3D, com o tamanho aproximado de 10cm x 10cm x 5cm, seus cantos serão arredondados para evitar acidentes no manuseio. Para facilitar a identificação, além da sua cor, cada bloco possuirá um simbolo representado o tipo da ação conforme mostrado na Figura \ref{figura:blocos_fisicos}.
+    
+    \begin{figure}[H]
+        \caption{Blocos Físicos}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/cap3/Blocos.png}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:blocos_fisicos}
+    \end{figure}
+    
+    As ações são divididas em dois tipos:
+    
+    \subsubsection{Ações Diretas}
+    As ações diretas são andar, apresentado na Figura \ref{figura:andar}, e girar 90 graus, apresentado na Figura \ref{figura:girar}. Ao identificar esse bloco, o código irá executar a ação escolhida.
+    
+    \begin{figure}[H]
+        \caption{Andar}
+        \centering
+        \includegraphics[width=5cm]{Imagens/cap3/Ande.png}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:andar}
+    \end{figure}
+    
+    \begin{figure}[H]
+        \caption{Gire 90 graus}
+        \centering
+        \includegraphics[width=5cm]{Imagens/cap3/Gire.png}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:girar}
+    \end{figure}
+    
+    \subsubsection{Ação de Repetição}
+    A ação de repetição, mostrada na Figura \ref{figura:repita}, possibilitará uma otimização do código, visto que, ao identificar esse bloco, criará um loop e executará as ações contidas dentro dele.
+    
+    \begin{figure}[H]
+        \caption{Repita}
+        \centering
+        \includegraphics[width=5cm]{Imagens/cap3/Repita.png}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:repita}
+    \end{figure}
     
     \subsection{Software}
      No tópico a seguir, são apresentados os diagramas do software que representam o seu funcionamento.
@@ -213,9 +253,8 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         
         \begin{figure}[H]
             \caption{Diagrama Entidade Relacionamento}
-            \begin{center}
-                \includegraphics[width=\linewidth]{Imagens/cap3/MER_DER.jpg}
-            \end{center}
+            \centering
+            \includegraphics[width=\linewidth]{Imagens/cap3/MER_DER.jpg}
             \legend{\small{Fonte: o autor (2020)}}
             \label{figura:der_mer}
         \end{figure}
