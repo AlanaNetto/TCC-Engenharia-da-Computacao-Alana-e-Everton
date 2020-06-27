@@ -303,8 +303,14 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         A base possuirá diversas imagens por tipo de bloco. Ao todo será por volta de 1000 imagens dos blocos. As imagens da base serão em resolução 1920x1080, isto é, Full HD, e em formato PNG (Portable Network Graphics). Em média cada arquivo terá 4MB. Cada imagem terá uma identificação correspondente ao seu bloco. 
 
         \subsubsection{Serviços Cloud}
+            O projeto utilizará serviços em cloud para hospedar o código para identificação dos blocos e para o salvamento dos dados.
+            Os tópicos a seguir detalham quais serviços serão utilizados.
+            
         \subsubsubsection{Cloud Foundry}
-        \subsubsubsection{Cloudant}
+        O Cloud Foundry é um servico \textit{PAAS (Platform as a Service)} que permite implementar e ajustar a escala de aplicativos de maneira rápida, simples e barata.
+        
+        \subsubsubsection{IBM Cloudant}
+        O IBM Cloudant é um serviço de banco de dados distribuído, desenvolvido no Apache CouchDB. É otimizado para grandes cargas e rápido crescimento.
         
         \subsubsection{DER/MER}
         O diagrama apresentado na Figura \ref{figura:der_mer} mostra os relacionamentos entre os esquemas do sistema, crianca e resolucao\_desafio, juntamente com seus atributos, nome, idade, numero, tempo, está correta e blocos.
@@ -377,9 +383,11 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         O diagrama apresentado na Figura \ref{figura:sequencia_tutor} mostra o processo para o tutor visualizar os relatórios dos desafios submetidos pelas crianças.
         
         \begin{figure}[H]
-            \caption{Diagrama de Sequência - Visualização de Relatorio}
+            \caption{Diagrama de Sequência - Visualização de Relatório}
             \centering
                 \includegraphics[width=\linewidth]{Imagens/cap3/sequencia_tutor.jpg}
             \legend{\small{Fonte: o autor (2020)}}
             \label{figura:sequencia_tutor}
         \end{figure}
+        
+        O tutor receberá um link via e-mail para acessar o relatório das soluções submetidas pelas crianças. Ao acessar o link, a tela acessa o banco de dados para buscar as informações para popular os relatórios.
