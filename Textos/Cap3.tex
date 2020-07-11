@@ -21,7 +21,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     \begin{figure}[H]
         \caption{Visão geral do sistema}
         \centering
-        \includegraphics[width=\linewidth]{Imagens/cap3/diagrama_blocos.png}
+        \includegraphics[width=\linewidth]{Imagens/Cap3/diagrama_blocos.png}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:diagrama_blocos}
     \end{figure}
@@ -102,7 +102,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     \begin{figure}[H]
         \caption{Tela Inicial}
         \centering
-        \includegraphics[width=\linewidth]{Imagens/cap3/Tela Inicial.jpg}
+        \includegraphics[width=\linewidth]{Imagens/Cap3/Tela Inicial.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:tela_inicial}
     \end{figure}
@@ -112,7 +112,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     \begin{figure}[H]
         \caption{Tela de Desafios}
         \centering
-        \includegraphics[width=\linewidth]{Imagens/cap3/tela_desafios.jpg}
+        \includegraphics[width=\linewidth]{Imagens/Cap3/tela_desafios.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:tela_desafios}
     \end{figure}
@@ -125,7 +125,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     \begin{figure}[H]
         \caption{Tela de Cadastro}
         \centering
-        \includegraphics[width=\linewidth]{Imagens/cap3/informacoes_usuario.jpg}
+        \includegraphics[width=\linewidth]{Imagens/Cap3/informacoes_usuario.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:cadastro}
     \end{figure}
@@ -135,7 +135,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     \begin{figure}[H]
         \caption{Tela do Jogo}
         \centering
-        \includegraphics[width=\linewidth]{Imagens/cap3/tela_jogo.jpg}
+        \includegraphics[width=\linewidth]{Imagens/Cap3/tela_jogo.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:tela_jogo}
     \end{figure}
@@ -147,7 +147,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     \begin{figure}[H]
         \caption{Tela para fotografar a solução}
         \centering
-        \includegraphics[width=\linewidth]{Imagens/cap3/UploadSolucao.jpg}
+        \includegraphics[width=\linewidth]{Imagens/Cap3/UploadSolucao.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:fotografar_blocos}
     \end{figure}
@@ -160,7 +160,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     \begin{figure}[H]
         \caption{Mensagem de solução correta}
         \centering
-        \includegraphics[width=\linewidth]{Imagens/cap3/solucao_correta.jpg}
+        \includegraphics[width=\linewidth]{Imagens/Cap3/solucao_correta.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:solucao_correta}
     \end{figure}
@@ -168,7 +168,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     \begin{figure}[H]
         \caption{Mensagem de solução incorreta}
         \centering
-        \includegraphics[width=\linewidth]{Imagens/cap3/solucao_incorreta.jpg}
+        \includegraphics[width=\linewidth]{Imagens/Cap3/solucao_incorreta.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:solucao_incorreta}
     \end{figure}
@@ -178,7 +178,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     \begin{figure}[H]
         \caption{Tela de Relatórios}
         \centering
-        \includegraphics[width=\linewidth]{Imagens/cap3/Tela Relatorios.jpg}
+        \includegraphics[width=\linewidth]{Imagens/Cap3/Tela Relatorios.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:tela_relatorios}
     \end{figure}
@@ -192,7 +192,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     \begin{figure}[H]
         \caption{Criança capturando a solução}
         \centering
-        \includegraphics[width=10cm]{Imagens/cap3/CriançaBlocos.jpg}
+        \includegraphics[width=10cm]{Imagens/Cap3/CriançaBlocos.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:crianca_blocos}
     \end{figure}
@@ -207,58 +207,82 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     Nessa sessão, são apresentadas as arquiteturas de hardware e software do sistema.
 
     \subsection{Hardware}
-    O hardware do sistema será composto por blocos físicos e o dispositivo mobile com câmera.
+    O hardware do sistema será composto por blocos físicos e o dispositivo mobile com câmera. O dispositivo mobile deverá ser um celular \textit{Android} com câmera, podendo variar entre os modelos existentes no mercado.
     
-    O dispositivo mobile deverá ser um celular \textit{Android} com câmera, podendo variar entre os modelos existentes no mercado.
-    
-    Os blocos físicos serão construídos de PLA, impressos em 3D, com o tamanho aproximado de 10cm x 10cm x 5mm, seus cantos serão arredondados para evitar acidentes no manuseio. Para facilitar a identificação, além da sua cor, cada bloco possuirá um simbolo representado o tipo da ação conforme mostrado na Figura \ref{figura:blocos_fisicos}.
+    Os blocos físicos serão construídos de PLA, impressos em 3D, com o tamanho aproximado de 10cm x 10cm x 5mm, seus cantos serão arredondados para evitar acidentes no manuseio. Para facilitar a identificação, cada bloco possuirá uma cor especifica juntamente com um símbolo representando a sua ação.
+    Os blocos são dividos em duas categorias, sendo elas, ações e blocos numéricos. As ações são divididas em dois tipos, ações diretas e repetição. A Figura \ref{figura:blocos_fisicos} apresenta todos os blocos disponíveis no protótipo.
     
     \begin{figure}[H]
         \caption{Blocos Físicos}
         \centering
-        \includegraphics[width=\linewidth]{Imagens/cap3/Blocos.png}
+        \includegraphics[width=\linewidth]{Imagens/Cap3/Blocos/Todos.png}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:blocos_fisicos}
     \end{figure}
     
-    As ações são divididas em dois tipos, que são apresentados nos próximos tópicos.
+    \subsubsection{Blocos Numéricos}
+        Os blocos numéricos são identificados pela cor verde e pelos números de um a nove, conforme apresentado na Figura \ref{figura:blocos_numericos}. Eles possuem um encaixe diferente dos demais, somente encaixam nos blocos de repetição, pois são utilizados para identificar a quantidade de vezes que o bloco de repetição irá repetir. Não podem ser utilizados com outros blocos ou até mesmo sozinho.
+        
+        \begin{figure}[H]
+            \caption{Blocos Numéricos}
+            \centering
+            \includegraphics[width=10cm]{Imagens/Cap3/Blocos/Blocos_Numericos.png}
+            \legend{\small{Fonte: o autor (2020)}}
+            \label{figura:blocos_numericos}
+        \end{figure}
     
-        \subsubsection{Ações Diretas}
-        As ações diretas são andar, apresentado na Figura \ref{figura:andar}, e girar 90 graus, apresentado na Figura \ref{figura:girar}. Ao identificar esse bloco, o código irá executar a ação escolhida.
+    \subsubsection{Ações Diretas}
+        As ações diretas são ações que não possuem necessidade de outros blocos, ou seja, podem ser utilizadas sozinhas.
+        O jogo possui 3 ações diretas, sendo elas, andar, virar noventa graus e esperar. 
+        A ação andar movimenta o personagem para frente uma única vez, seu bloco é identificado pela cor amarela e pelo simbolo de um boneco andando, conforme apresentado na Figura \ref{figura:andar}.
         
         \begin{figure}[H]
             \caption{Andar}
             \centering
-            \includegraphics[width=5cm]{Imagens/cap3/Ande.png}
+            \includegraphics[width=5cm]{Imagens/Cap3/Blocos/Andar.png}
             \legend{\small{Fonte: o autor (2020)}}
             \label{figura:andar}
         \end{figure}
         
+        A ação virar noventa graus rotaciona o personagem noventa graus para a esquerda, seu bloco é identificado pela cor azul e o simbolo de uma seta apontando para a esquerda, conforme apresentado na Fugira \ref{figura:virar}.
+        
         \begin{figure}[H]
-            \caption{Gire 90 graus}
+            \caption{Virar noventa graus}
             \centering
-            \includegraphics[width=5cm]{Imagens/cap3/Gire.png}
+            \includegraphics[width=5cm]{Imagens/Cap3/Blocos/Virar.png}
             \legend{\small{Fonte: o autor (2020)}}
-            \label{figura:girar}
+            \label{figura:virar}
         \end{figure}
         
-        \subsubsection{Ação de Repetição}
-        A ação de repetição, mostrada na Figura \ref{figura:repita}, possibilitará uma otimização do código, visto que, ao identificar esse bloco, criará um loop e executará as ações contidas entre dois blocos conforme mostra a Figura \ref{figura:repita_exemplo}.
+        A ação esperar mantém o personagem parado no cenário, sem executar nenhuma outra ação, seu bloco é identificado pela cor laranja e o simbolo de uma ampulheta, conforme apresentado na Figura \ref{figura:esperar}
         
         \begin{figure}[H]
-            \caption{Repita}
+            \caption{Esperar}
             \centering
-            \includegraphics[width=5cm]{Imagens/cap3/Repita.png}
+            \includegraphics[width=5cm]{Imagens/Cap3/Blocos/Esperar.png}
             \legend{\small{Fonte: o autor (2020)}}
-            \label{figura:repita}
+            \label{figura:esperar}
         \end{figure}
         
+    \subsubsection{Ação de Repetição}
+        A ação de repetição é identificada pela cor roxa e pelo simbolo de duas flechas em formato oval, conforme apresentado na Figura \ref{figura:repetir}. É uma ação que possui necessidade de mais blocos para ser executada, não podendo ser utilizada sozinha.
+        
         \begin{figure}[H]
-            \caption{Exemplo para repetição}
+            \caption{Repetir}
             \centering
-            \includegraphics[width=\linewidth]{Imagens/cap3/repita_exemplo.png}
+            \includegraphics[width=5cm]{Imagens/Cap3/Blocos/Repetir.png}
             \legend{\small{Fonte: o autor (2020)}}
-            \label{figura:repita_exemplo}
+            \label{figura:repetir}
+        \end{figure}
+        
+        Para criar uma repetição é preciso a utilização de um bloco de repetição seguido das ações diretas a serem repetidas e outro bloco de repetição para finalização. Possui um encaixe na parte superior para ser colocado um bloco numérico, que identificará a quantidade de vezes que as ações devem ser executadas. O bloco numérico precisará constar somente no bloco de repetição de inicio. Caso não seja utilizado um bloco numérico em conjunto, ficará executando infinitamente. A Figura \ref{figura:exemplo_repeticao} mostra um exemplo de repetição, onde as ações andar e virar noventa graus serão repetidas infinitamente.
+        
+        \begin{figure}[H]
+            \caption{Exemplo de repetição}
+            \centering
+            \includegraphics[width=\linewidth]{Imagens/Cap3/Blocos/Exemplo_Repeticao.png}
+            \legend{\small{Fonte: o autor (2020)}}
+            \label{figura:exemplo_repeticao}
         \end{figure}
     
     \subsection{Software}
@@ -291,7 +315,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
             O OpenCV possui suporte para C++, Java, Python, linguagem M e pode ser usado em sistemas operacionais como Android, Windows, Mac, Linux. Empresas como Google, Microsoft, Intel, Honda,  IBM fazem uso da plataforma OpenCV. Pela relevância na academia e quantidade de algoritmos de visão computacional que o OpenCV possui, esse pacote foi escolhido como módulo base para visão computacional nessa aplicação.
             
             \subsubsubsection{TensorFlow e Keras}
-             O TensorFlow foi desenvolvidos por pesquisadores do Google com o objetivo de produzir uma interface de aprendizado de máquina que teria a capacidade de ser executada, da mesma forma, tanto em em grandes servidores de GPUs quanto pequenas aplicações mobile. O tensorflow é um módulo com código aberto para execução de algoritmos aprendizado de máquinas. Como outras ferramentas citadas acima, é utilizado tanto pela comunidade científica quanto por profissionais da indústria.
+            O TensorFlow foi desenvolvidos por pesquisadores do Google com o objetivo de produzir uma interface de aprendizado de máquina que teria a capacidade de ser executada, da mesma forma, tanto em em grandes servidores de GPUs quanto pequenas aplicações mobile. O tensorflow é um módulo com código aberto para execução de algoritmos aprendizado de máquinas. Como outras ferramentas citadas acima, é utilizado tanto pela comunidade científica quanto por profissionais da indústria.
              
             O TensorFlow é usado para inferência e treinamento de modelos de Deep Learning. Portanto pode ser usado em aplicações de processamento de linguagem natural, visão computacional, robótica, entre outras.
             
@@ -327,7 +351,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \begin{figure}[H]
             \caption{Diagrama Entidade Relacionamento}
             \centering
-            \includegraphics[width=\linewidth]{Imagens/cap3/MER_DER.jpg}
+            \includegraphics[width=\linewidth]{Imagens/Cap3/MER_DER.jpg}
             \legend{\small{Fonte: o autor (2020)}}
             \label{figura:der_mer}
         \end{figure}
@@ -349,7 +373,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \begin{figure}[H]
             \caption{Use Case}
             \centering
-                \includegraphics[width=10cm]{Imagens/cap3/Use Case.jpg}
+                \includegraphics[width=10cm]{Imagens/Cap3/Use Case.jpg}
     
             \legend{\small{Fonte: o autor (2020)}}
             \label{figura:use_case}
@@ -366,7 +390,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \begin{figure}[H]
             \caption{Diagrama de Sequência - Perfil}
             \centering
-                \includegraphics[width=\linewidth]{Imagens/cap3/Sequencia_Perfil.jpg}
+                \includegraphics[width=\linewidth]{Imagens/Cap3/Sequencia_Perfil.jpg}
     
             \legend{\small{Fonte: o autor (2020)}}
             \label{figura:sequencia_perfil}
@@ -379,7 +403,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \begin{figure}[H]
             \caption{Diagrama de Sequência - Submissão da Resolução}
             \centering
-                \includegraphics[width=\linewidth]{Imagens/cap3/Sequencia_Jogo.jpg}
+                \includegraphics[width=\linewidth]{Imagens/Cap3/Sequencia_Jogo.jpg}
     
             \legend{\small{Fonte: o autor (2020)}}
             \label{figura:sequencia_jogo}
@@ -394,7 +418,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \begin{figure}[H]
             \caption{Diagrama de Sequência - Visualização de Relatório}
             \centering
-                \includegraphics[width=\linewidth]{Imagens/cap3/sequencia_tutor.jpg}
+                \includegraphics[width=\linewidth]{Imagens/Cap3/sequencia_tutor.jpg}
             \legend{\small{Fonte: o autor (2020)}}
             \label{figura:sequencia_tutor}
         \end{figure}
