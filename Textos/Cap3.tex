@@ -99,10 +99,15 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     O \textit{REST (Representational State Transfer)} é uma abstração da arquitetura da \textit{Web}. Consistem em regras que permitem a criação de projetos com interfaces bem definidas, permitindo a comunicação entre aplicações.
     
     \subsection{Processamento}
-    O processamento por parte do software, ocorre tanto no aplicativo quanto no servidor. O jogo captura as imagens e as envia para o servidor através da Internet. O servidor recebe as imagens enviadas pelo aplicativo e passa cada uma pelo algoritmo de visão computacional, responsável pela identificação de cada bloco nas fotos. Após a identificação dos blocos, é salvo a sequência no banco de dados e as ações são enviadas para o aplicativo.
-    Após receber o retorno com as ações, o aplicativo transforma as ações em código e executa o mesmo durante o jogo.
     
+      O processamento por parte do software, ocorre tanto no aplicativo quanto no servidor. O jogo captura as imagens e as envia para o servidor através da Internet. O servidor recebe as imagens enviadas pelo aplicativo e passa cada uma pelo algoritmo de visão computacional, responsável pela identificação de cada bloco nas fotos. Após a identificação dos blocos, é salvo a sequência no banco de dados e as ações são enviadas para o aplicativo.
+    
+     Após receber o retorno com as ações, o aplicativo transforma as ações em código e executa o mesmo durante o jogo.
+     
+    \subsubsection{Jogo}
+  
     O jogo possuirá 4 desafios, cada um explorando um tipo de bloco. Ao inicio de cada fase, será executado uma animação para mostrar a ação que o tipo de bloco apresentado na fase executará juntamente com a sua forma de utilização.
+    
     A primeira fase, apresentada na Figura \ref{figura:fase_1} trabalha a utilização do bloco andar. Para completar a fase com sucesso, a criança precisará utilizar uma combinação de três blocos andar para coletar o lixo e levá-lo a lixeira correta. Ao final dessa fase, será apresentado um vídeo informativo sobre o descarte correto de plástico.
     
     \begin{figure}[H]
@@ -142,8 +147,13 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:fase_4}
     \end{figure}
+
+
+    \subsubsection{Reconhecimento dos blocos}
+     
+     Para etapa de reconhecimentos dos blocos será utilizado a linguagem de programação Python versão 3 juntamente com o módulo de processamento digital de imagens OpenCV.
+
     
-    % Escrever sobre o processamento das imagens.
     
     \subsection{Interface Homem-Máquina}
     As interações da criança serão com os blocos físicos e com o aplicativo.
