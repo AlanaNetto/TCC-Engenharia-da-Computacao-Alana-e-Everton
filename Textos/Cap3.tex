@@ -7,30 +7,40 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     
     \subsection{Visão Geral}
     
-    O software, apresentado em forma de jogo com o tema reciclagem, apresentará diversos desafios em que a criança deverá solucionar criando sequências lógicas com blocos físicos. Após a ordenação dos blocos, de maneira em que achar correta, pela criança, ela deverá tirar fotos da sua solução e submetê-la para a avaliação do desafio dentro do aplicativo.
+    O software, em forma de jogo com o tema reciclagem, apresentará diversos desafios em que a criança deverá solucionar criando sequências lógicas com blocos físicos, conforme apresentado na Figura \ref{figura:visao_geral}. O objetivo do jogo é levar o personagem principal para coletar o lixo, descartado incorretamente no chão, e descartá-lo na lixeira correta. Para movimentar o personagem no cenário, a criança ordenará blocos físicos em uma superfície plana. Cada bloco possui cor e simbolo próprio para representar a sua ação. Após a ordenação dos blocos, de maneira em que a criança achar correta, ela deverá tirar uma foto da sua solução e submetê-la para a análise do servidor conforme apresentado no diagrama da Figura \ref{figura:blocos_desafio}.
     
-    Ao finalizar a captura da solução proposta, o aplicativo enviará a sequência de imagens para um servidor, hospedado na nuvem, o qual fará a análise das imagens dos blocos por meio de visão computacional a fim de identificar e converter os blocos em ações para o jogo.
-    
-    Ao final da conversão, o servidor devolverá para o jogo a solução proposta em ações.
-    Caso a solução esteja correta, a criança passará para o próximo desafio, caso contrário, será oferecido uma nova tentativa.
-    
-    O aplicativo coletará dados durante o desafio para o preenchimento de relatórios que serão apresentados para o professor ou tutor através de um portal.
-    
-    A Figura \ref{figura:diagrama_blocos} apresenta a visão geral do sistema proposto.
-  
     \begin{figure}[H]
         \caption{Visão geral do sistema}
         \centering
-        \includegraphics[width=\linewidth]{Imagens/Cap3/diagrama_blocos.png}
+        \includegraphics[width=\linewidth]{Imagens/Cap3/Visao_Geral.jpg}
         \legend{\small{Fonte: o autor (2020)}}
-        \label{figura:diagrama_blocos}
+        \label{figura:visao_geral}
+    \end{figure}
+    
+    \begin{figure}[H]
+        \caption{Diagrama de blocos para submissão do desafio}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/Cap3/Blocos Desafio.jpg}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:blocos_desafio}
+    \end{figure}
+    
+    A análise da imagem será por meio de visão computacional a fim de identificar os blocos utilizados e convertê-los em ações. Ao final da conversão, o servidor salvará a solução submetida no banco de dados e retornará as ações para o jogo executar, representado no diagrama da Figura \ref{figura:blocos_reconhecimento}. O professor/tutor terá acesso a um link para visualizar todas as submissões das crianças, além de gráficos estatísticos comparando-as.
+    
+    \begin{figure}[H]
+        \caption{Diagrama de blocos para reconhecimento dos blocos}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/Cap3/Blocos Reconhecimento.jpg}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:blocos_reconhecimento}
     \end{figure}
     
     \subsection{Condições Restritivas}
     O projeto proposto apresenta algumas condições restritivas, conforme descrito nos próximos subitens.
 
         \subsubsection{Custos}
-        Apesar do aplicativo jogo precisar de materiais relativamente baratos para ser jogado, como blocos impressos em 3D ou até mesmo papéis coloridos dobrados de forma semelhante aos blocos impressos, ainda se faz necessário o uso de um celular com sistema operacional Android com câmera para que o aplicativo funcione. 
+        Apesar do jogo precisar de materiais relativamente baratos para ser jogado, como blocos impressos em 3D ou até mesmo papéis coloridos dobrados de forma semelhante aos blocos impressos, ainda se faz necessário o uso de um celular com sistema operacional Android com câmera para que o aplicativo funcione. 
+        % Escrever sobre custos de impressão dos blocos
             
         \subsubsection{Físicas e Ambientais}
         Apesar, quando impressos em 3D, dos bloco terem uma boa durabilidade, com o passar do tempo ficarão inutilizáveis. Portanto deve-se orientar os usuários do aplicativo jogo a fazer o descarte adequado dos blocos físicos depois de inutilizáveis, seja por desgaste dos blocos ou por falta de uso, o que vai de encontro com uma das propostas levantada pelo aplicativo jogo, a reciclagem.
@@ -43,6 +53,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         
         \subsubsection{Interferências devido ao meio}
         O aplicativo jogo precisa de conexão com internet para funcionar. Obstáculos como objetos metálicos ou paredes podem causar interferências no sinal Wi-Fi. Eletrônicos e eletrodomésticos, como por exemplo micro-ondas, operam na mesma frequência do roteador wireless, 2,4 GHz, que quando ligados, também podem contribuir com interferências dificultando ou até impossibilitando o uso do aplicativo.
+        % Escrever sobre o posicionamento da camera e dos blocos
     
     \subsection{Benefícios e Impactos}
     O aplicativo jogo apresenta alguns benefícios e impactos, conforme descrito nos próximos subitens.
@@ -63,6 +74,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         O aplicativo jogo apresenta benefícios sociais para as crianças, pois as crianças terão acessos a conceitos básicos de lógica de programação e oportunidade de exercitar esse conceitos, o que pode auxiliar em competências como raciocínio lógico, resolução de problemas, pensamento computacional, entre outras habilidades que tem sido cada vez mais requisitadas no mercado de trabalho. 
         Isso sendo proporcionado por um jogo, além de gerar maior engajamento no ensino de crianças, pode desenvolver, também, competências como cooperação, cumprimento de regras, controle de impulsividade, auxílio na tomada de decisões, mais facilidade para lidar com erros e fracassos entre outras habilidades sociais.
         Além disso, o aplicativo jogo, por meio do tema de reciclagem, pode desenvolver senso de sustentabilidade auxiliando na compreensão da importância do descarte correto do lixo, o que impacta direta e positivamente  o meio ambiente.
+        % Revisar escrita
 
 \section{Análise Funcional e de Requisitos Tecnológicos}
     Nessa sessão, é apresentada a análise funcional e os requisitos tecnológicos do sistema.
@@ -86,9 +98,51 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     O \textit{REST (Representational State Transfer)} é uma abstração da arquitetura da \textit{Web}. Consistem em regras que permitem a criação de projetos com interfaces bem definidas, permitindo a comunicação entre aplicações.
     
     \subsection{Processamento}
-    O processamento por parte do software, ocorre tanto no aplicativo quanto no servidor. O aplicativo captura as imagens e as envia para o servidor através da Internet. O servidor recebe as imagens enviadas pelo aplicativo e passa cada uma pelo algoritmo de visão computacional, responsável pela identificação de cada bloco nas fotos. Após a identificação dos blocos, é salvo a sequência no banco de dados e as ações são enviadas para o aplicativo.
+    O processamento por parte do software, ocorre tanto no aplicativo quanto no servidor. O jogo captura as imagens e as envia para o servidor através da Internet. O servidor recebe as imagens enviadas pelo aplicativo e passa cada uma pelo algoritmo de visão computacional, responsável pela identificação de cada bloco nas fotos. Após a identificação dos blocos, é salvo a sequência no banco de dados e as ações são enviadas para o aplicativo.
     Após receber o retorno com as ações, o aplicativo transforma as ações em código e executa o mesmo durante o jogo.
-    % Precisa escrever sobre o processamento das imagens, qual tipo de modelo, biblioteca, linguagem etc.
+    
+    O jogo possuirá 4 desafios, cada um explorando um tipo de bloco. Ao inicio de cada fase, será executado uma animação para mostrar a ação que o tipo de bloco apresentado na fase executará juntamente com a sua forma de utilização.
+    A primeira fase, apresentada na Figura \ref{figura:fase_1} trabalha a utilização do bloco andar. Para completar a fase com sucesso, a criança precisará utilizar uma combinação de três blocos andar para coletar o lixo e levá-lo a lixeira correta. Ao final dessa fase, será apresentado um vídeo informativo sobre o descarte correto de plástico.
+    
+    \begin{figure}[H]
+        \caption{Fase 1}
+        \centering
+        \includegraphics[width=12cm]{Imagens/Cap3/Fases/Fase1.jpg}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:fase_1}
+    \end{figure}
+    
+    A segunda fase, apresentada na Figura \ref{figura:fase_2} trabalha a utilização do bloco virar noventa graus. Para completar a fase com sucesso, a criança precisará utilizar uma combinação de quatro blocos andar e um bloco virar 90 graus para coletar o lixo e levá-lo a lixeira correta. Ao final dessa fase, será apresentado um vídeo informativo sobre o descarte correto de papel.
+    
+    \begin{figure}[H]
+        \caption{Fase 2}
+        \centering
+        \includegraphics[width=12cm]{Imagens/Cap3/Fases/Fase2.jpg}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:fase_2}
+    \end{figure}
+    
+    A terceira fase, apresentada na Figura \ref{figura:fase_3} trabalha a utilização do bloco esperar. Para completar a fase com sucesso, a criança precisará utilizar uma combinação de cinco blocos andar e um bloco esperar para coletar o lixo e levá-lo a lixeira correta. Ao final dessa fase, será apresentado um vídeo informativo sobre o descarte correto de metal.
+    
+    \begin{figure}[H]
+        \caption{Fase 3}
+        \centering
+        \includegraphics[width=12cm]{Imagens/Cap3/Fases/Fase3.jpg}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:fase_3}
+    \end{figure}
+    
+    A quarta fase, apresentada na Figura \ref{figura:fase_4} trabalha a utilização do bloco de repetição. Para completar a fase com sucesso, a criança precisará utilizar uma combinação de quatro blocos andar, um bloco esperar e um bloco virar 90 graus juntamente do bloco de repetição e o bloco numérico 2 para coletar o lixo e levá-lo a lixeira correta. Ao final dessa fase, será apresentado um vídeo informativo sobre o descarte correto de vidro.
+    
+    \begin{figure}[H]
+        \caption{Fase 4}
+        \centering
+        \includegraphics[width=12cm]{Imagens/Cap3/Fases/Fase4.jpg}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:fase_4}
+    \end{figure}
+    
+    % Escrever sobre o processamento das imagens.
     
     \subsection{Interface Homem-Máquina}
     As interações da criança serão com os blocos físicos e com o aplicativo.
@@ -178,7 +232,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     O Sistema não apresentará sistemas controlados automaticamente.
     
     \subsection{Aquisição de dados e Atuação}
-    A coleta das fotos se dará através da ação da criança que está jogando. Após concluir a proposta de solução do desafio, a criança deve capturar sua proposta utilizando a câmera do dispositivo móvel, como mostrado na Figura \ref{figura:crianca_blocos}
+    A coleta das fotos se dará através da ação da criança que está jogando. Após concluir a proposta de solução do desafio, a criança deve capturar sua proposta utilizando a câmera do dispositivo móvel, como mostrado na Figura \ref{figura:crianca_blocos}.
     
     \begin{figure}[H]
         \caption{Criança capturando a solução}
@@ -277,57 +331,21 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \end{figure}
     
     \subsection{Software}
-    A arquitetura do software será baseada em serviços cloud e mobile. Para o ambiente cloud, será utilizado a IBM Cloud como provedor.
-    O servidor, programado em Python, utilizará um serviço chamado Cloud Foundry. O banco de dados, não relacional, utilizará o serviço IBM Cloudant.
+    O jogo será desenvolvido para celulares Android utilizando o Unity 3D. A arquitetura do software para reconhecimento dos blocos será baseada em serviços cloud, utilizando a IBM Cloud como provedor.
+    O servidor, programado em Python, utilizará o serviço IBM Cloud Foundry. O banco de dados, não relacional, utilizará o serviço IBM Cloudant.
     
-    O Cloud Foundry é um servico \textit{PAAS (Platform as a Service)} que permite implementar e ajustar a escala de aplicativos de maneira rápida, simples e barata. O IBM Cloudant é um serviço de banco de dados distribuído, desenvolvido no Apache CouchDB. É otimizado para grandes cargas e rápido crescimento.
+    O Cloud Foundry é um servico \textit{PAAS (Platform as a Service)} que permite implementar e ajustar a escala de aplicativos de maneira rápida, simples e barata. O IBM Cloudant é um serviço de banco de dados distribuído, desenvolvido no Apache CouchDB, é otimizado para grandes cargas e rápido crescimento.
     
     Nos tópicos a seguir, são apresentados os diagramas do software que representam o seu funcionamento.
         
-        % \subsubsection{Ferramentas de Desenvolvimento}
-        
-        % Na etapa de desenvolvimento do reconhecimento da imagem dos blocos será utilizado o Jupyter Notebook como ambiente de desenvolvimento juntamente com a linguagem de programação Python versão 3. Os módulos para visão computacional e aprendizado de máquina serão OpenCV, TensorFlow, Keras entre outros. As principais ferramentas estão descritas abaixo.
-        
-    
-        %     \subsubsubsection{Jupyter Notebook}
-    
-        %     O Jupyter notebook foi criado em 2014, sem objetivos lucrativos, como uma extensão do IPython, o jupyter tem o propósito de ter suporte para várias linguagens de programação para o desenvolvimento iterativo da computação científica e da ciência dos dados. O jupyter possui uma interface chamada Notebook, esta interface é executada diretamente no navegador web e possibilita a integração entre  execuções de códigos, gráficos, textos, imagens, vídeos e diversas outras formas de visualizações suportada pelos navegadores atuais. Outro recurso do Notebook é o compartilhamento do arquivo .ipynb de forma simples e em diversos formatos, como por exemplo HTML, pdf, entre outros.
-            
-        % 	O jupyter também possui, juntamente com o código, suporte para a linguagem de marcação textual Markdown, desta forma o jupyter possibilita a criação de relatórios, guias e documentações com grande qualidade visual.  Por conta disso e pela facilidade de visualização dos processos e resultados, o Jupyter Notebook foi escolhido como interface para o desenvolvimento em Python. 
-                
-        %     \subsubsubsection{Python}
-        %     A linguagem de programação Python foi desenvolvida em 1989 por Guido Van Rossum. Rossum tinha o objetivo de desenvolver uma linguagem capaz de agilizar processos de criação de softwares. 
-        % 	O Python é uma linguagem de alto nível e interpretada. Hoje companhias como Google, Yahoo, CERN e Nasa utilizam Python em suas aplicações. Por sua ampla utilização e baixa complexidade, diversos programadores desenvolvem pacotes, conhecidos na linguagem como módulos, que estendem o horizonte de aplicação da linguagem. Por conta de módulos como Scikit learning, Numpy, desenvolvidos na academia, que facilitam operações com vetores, o Python se tornou bastante utilizado em aplicações com inteligência artificial,  principalmente na academia.
-        	
-        %     Além de Inteligência artificial, a linguagem Python também é utilizada em aplicações web, análise e visualização de dados, desenvolvimento de jogo, sistemas embarcados, entre outras. Por conta de sua ampla aplicabilidade e baixa complexidade,  é uma das linguagens de programação mais utilizadas hoje em dia e possui uma das comunidades mais ativas em fóruns, eventos e cursos. Devido a esses fatores, Python foi escolhido para o desenvolvimento desta etapa do aplicativo jogo.  
-                
-        %     \subsubsubsection{OpenCV}
-        %     O OpenCV consiste em uma plataforma com diversa bibliotecas para o desenvolvimento de aplicações de Aprendizado de Máquinas e Visão Computacional. A plataforma OpenCV foi desenvolvida pela Intel com o propósito de oferecer uma infraestrutura universal para aplicações de Visão Computacional tanto no mercado quanto acedemia. O OpenCV possui mais de 2.500 algoritmos para detecção de faces, identificação de objetos, classificação de ações e objetos em imagens e vídeos, entre outras aplicações de Visão Computacional.
-            
-        %     O OpenCV possui suporte para C++, Java, Python, linguagem M e pode ser usado em sistemas operacionais como Android, Windows, Mac, Linux. Empresas como Google, Microsoft, Intel, Honda,  IBM fazem uso da plataforma OpenCV. Pela relevância na academia e quantidade de algoritmos de visão computacional que o OpenCV possui, esse pacote foi escolhido como módulo base para visão computacional nessa aplicação.
-            
-        %     \subsubsubsection{TensorFlow e Keras}
-        %     O TensorFlow foi desenvolvidos por pesquisadores do Google com o objetivo de produzir uma interface de aprendizado de máquina que teria a capacidade de ser executada, da mesma forma, tanto em em grandes servidores de GPUs quanto pequenas aplicações mobile. O tensorflow é um módulo com código aberto para execução de algoritmos aprendizado de máquinas. Como outras ferramentas citadas acima, é utilizado tanto pela comunidade científica quanto por profissionais da indústria.
-             
-        %     O TensorFlow é usado para inferência e treinamento de modelos de Deep Learning. Portanto pode ser usado em aplicações de processamento de linguagem natural, visão computacional, robótica, entre outras.
-            
-        %     O Keras funciona como uma camada de alto nível sobre o TensorFlow, o que facilita a programação de algoritmos de Deep Learning. Hoje o Keras está integrado como um módulo ao TensorFlow.  
-            
-        %     \subsubsubsection{Unity}
-    
-        %     O Unity foi criado em 2005 por David Helgason, Joachim Ante e Nicholas
-        %     Francis na Dinamarca. É uma ferramenta com bastante força no mercado de jogos por suportar o desenvolvimento para diversas plataformas digitais. 50\% dos jogos entre todas as plataformas são feitos usando Unity tendo mais de 3 bilhões de dispositivos alcançados no mundo todo \cite{dados_unity}.
-            
-        %     Muitos jogos criados no Unity alcançaram sucesso de vendas e se tornaram bastante conhecidos, por exemplo o jogo Cuphead, criado pelo StudioMDHR lançado em 2017 para as plataformas Xbox One, Windows 10, e Steam \cite{cuphead}. Outro jogo bastante conhecido é o Monument Valley 2 lançado em 2017 para as plataformas Android e IOS\cite{monument_valley_2}.
-
         \subsubsection{Use Case}
-        O Aplicativo conta com funções de identificação da criança (Perfil), Inicio de desafio e submissão de solução, conforme apresentado no diagrama de caso de uso na Figura \ref{figura:use_case}.
+        O jogo conta com funções de identificação da criança (perfil), inicio de desafio e submissão de solução, conforme apresentado no diagrama de caso de uso da criança na Figura \ref{figura:use_case}. A função de submissão de solução do jogo conversa diretamente com a função de reconhecimento dos blocos no servidor.
+        O servidor conta com funções de relatórios e reconhecimento dos blocos. Apenas o professor/tutor poderá acessar os relatórios conforme apresentado no diagrama de caso de uso do tutor na Figura \ref{figura:use_case}.
         
         \begin{figure}[H]
-            \caption{Use Case}
+            \caption{Caso de uso}
             \centering
-                \includegraphics[width=10cm]{Imagens/Cap3/Use Case.jpg}
-    
+                \includegraphics[width=15cm]{Imagens/Cap3/Use_Case.jpg}
             \legend{\small{Fonte: o autor (2020)}}
             \label{figura:use_case}
         \end{figure}
@@ -338,7 +356,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         
         \subsubsubsection{Criação de Perfil}
         
-        A Figura \ref{figura:sequencia_perfil} mostra o diagrama de sequência para a realização do cadastro de informações da criança. Todas as informações são salvas localmente e em um banco de dados na nuvem.
+        A Figura \ref{figura:sequencia_perfil} mostra o diagrama de sequência para a realização do cadastro de informações da criança. Todas as informações são salvas localmente para que, na submissão da solução, seja salvo um único objeto. 
         
         \begin{figure}[H]
             \caption{Diagrama de Sequência - Perfil}
