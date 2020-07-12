@@ -4,7 +4,7 @@ Esse capitulo apresenta o embasamento teórico e trabalhos relacionados que junt
 \section{Fundamentação teórica}
 Essa sessão fornece uma base para o entendimento das necessidades de competências digitais e ensino de sustentabilidade para crianças.
 
-O objetivo desse capítulo é fornecer uma base para a leitura do texto apresentado nessa monografia em que são estudadas as tecnologias assistivas, a visão computacional e as formas de identificação de objetos em imagem.
+O objetivo desse capítulo é fornecer uma base para a leitura do texto apresentado nessa monografia em que são estudadas as tecnologias assistivas, visão computacional e as formas de identificação de objetos em imagem.
 
 \subsection{Ensino de competências digitais para crianças}
 
@@ -39,19 +39,26 @@ relevante trabalhar com o uso de programação e de jogos nas escolas. Já que e
 Assim, esse projeto visa desenvolver um meio de auxiliar o ensino de programação por meio de jogos, a fim de criar uma excelente ferramenta para o ensino dessas áreas nas escolas.
 
 \subsection{Visão Computacional}
-Visão computacional estuda como reconstruir, interromper e compreender uma cena 3D utilizando termos das propriedades da estrutura através de imagens 2D \citeonline{visao_computacional}. O termo é frequentemente utilizado como sinônimo de reconhecimento de imagem, porém visão computacional vai além de analisar imagens. O reconhecimento de imagens faz parte do processo de visão computacional, que engloba desde reconhecimento de objetos e caracteres, até analise de textos e sentimentos.
 
-Para um computador reconhecer e entender uma cena, segundo \citeonline{kaiser}, são seguidos alguns passos.
 
-\begin{itemize}
-    \item Aquisição de Imagem
-    \item Processamento da Imagem
-    \item Análise da imagem
-\end{itemize}
+A visão computacional tem o objetivo auxiliar na resolução de problemas em que se faz necessário extrair informações de imagens. O processo de extração dessas informações consiste no processamento de imagens e posteriormente na análise dos dados de saída da primeira etapa. O processamento digital de imagens consiste basicamente na identificação e extração de dados das imagens com o objetivo de se obter maior qualidade em características estruturais da imagem, preparando então para análises de alto nível que consiste em interpretar e reconhecer padrões nas imagens \cite{schwartz_2007}.
 
-Aquisição de imagem, é um processo de captura de imagens,capturada tanto por vídeos quanto por fotos. Geralmente essas imagens capturadas, passam por um tratamento para melhorar a qualidade e minimizar erros no processamento. 
-O processamento da imagem é feito em baixo nível, onde é incluído detecção de borda, segmentação e classificação.
-Na análise da imagem, é feita a tomada de decisão, onde são aplicados algoritmos de alto nível usando os dados coletados nos passos anteriores.
+O desenvolvimento de grande parte dos sistemas de visão computacional de hoje em dia consiste em aquisição das imagens, pré-processamento, segmentação, descrição e por fim interpretação e reconhecimento dessas imagens.
+
+
+A etapa de aquisição de imagens tem como objetivo, como seu próprio descreve, realizar a coleta das imagens. Essa coleta é realizada através de sensores, como câmeras, satélites, equipamentos médicos, entre outros. Depois da coleta das imagens, a etapa de aquisição também tem o objetivo de traduzir esses dados em um formato apropriado para a manipulação digital dessa imagem \cite{schwartz_2007}. O pré-processamento tem o propósito de otimizar as informações das imagens coletadas no processos de aquisição. Para tal se faz o uso de diversas técnicas como por exemplo, correções de brilho, equalização de histograma, detecção de bordas, aumento ou redução de contraste, atenuação de ruídos, entre outras. 
+A etapa de segmentação tem o objetivo realizar a separação de partes da imagem que possuem pixels semelhantes, com o objetivo de facilitar a distinção de classes de objetos.  
+A etapa de descrição tem o objetivo manipular essa seleção segmentada a fim extrair atributos relevantes para obter algum tipo de discriminação entre as classes de objetos. 
+Por fim a etapa de interpretação e reconhecimento de uma imagem consiste em determinar um identificador a classe de objetos. 
+
+
+
+As imagens são representadas digitalmente em formato matricial, traduzindo os aspectos do mundo real em um formato compreensível pelos computadores. Os componentes dessas matrizes chamados de pixels, ou seja, o menor ponto de uma imagem.
+Essas matrizes são bidimensionais, e seus componentes passam por preto, tons de cinza e branco, isto é, entre 0 a 255. Como as imagens coletadas são, na maioria das vezes, coloridas, ou seja, RGB (Red, Green, Blue), é necessário converter essas imagens para um modelo monocromático.
+
+
+
+
 
 \subsection{Ferramentas de Desenvolvimento}	
 
