@@ -7,7 +7,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     
     \subsection{Visão Geral}
     
-    O software, em forma de jogo com o tema reciclagem, apresentará diversos desafios em que a criança deverá solucionar criando sequências lógicas com blocos físicos, conforme apresentado na Figura \ref{figura:visao_geral}. O objetivo do jogo é levar o personagem principal para coletar o lixo, descartado incorretamente no chão, e descartá-lo na lixeira correta. Para movimentar o personagem no cenário, a criança ordenará blocos físicos em uma superfície plana. Cada bloco possui cor e simbolo próprio para representar a sua ação. Após a ordenação dos blocos, de maneira em que a criança achar correta, ela deverá tirar uma foto da sua solução e submetê-la para a análise do servidor conforme apresentado no diagrama da Figura \ref{figura:blocos_desafio}.
+    O software, em forma de jogo com o tema reciclagem, apresentará diversos desafios em que a criança deverá solucionar criando sequências lógicas com blocos físicos, conforme apresentado na Figura \ref{figura:visao_geral}. O objetivo do jogo é levar o personagem principal para coletar o lixo, descartado incorretamente no chão, e descartá-lo na lixeira correta. Para movimentar o personagem no cenário, a criança ordenará blocos físicos em uma superfície plana. Cada bloco possui cor e símbolo próprio para representar a sua ação. Após a ordenação dos blocos, de maneira em que a criança achar correta, ela deverá tirar uma foto da sua solução e submetê-la para a análise do servidor conforme apresentado no diagrama da Figura \ref{figura:blocos_desafio}.
     
     \begin{figure}[H]
         \caption{Visão geral do sistema}
@@ -25,7 +25,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \label{figura:blocos_desafio}
     \end{figure}
     
-    A análise da imagem será por meio de visão computacional a fim de identificar os blocos utilizados e convertê-los em ações. Ao final da conversão, o servidor salvará a solução submetida no banco de dados e retornará as ações para o jogo executar, representado no diagrama da Figura \ref{figura:blocos_reconhecimento}. O professor/tutor terá acesso a um link para visualizar todas as submissões das crianças, além de gráficos estatísticos comparando-as.
+    A análise da imagem será por meio de visão computacional a fim de identificar os blocos utilizados e convertê-los em ações. Ao final da conversão, o servidor salvará a solução submetida no banco de dados e retornará as ações para o jogo executar, representado no diagrama da Figura \ref{figura:blocos_reconhecimento}. O professor/tutor terá acesso a um link para visualizar todas as submissões das crianças, além de gráficos estatísticos comparando os resultados das crianças.
     
     \begin{figure}[H]
         \caption{Diagrama de blocos para reconhecimento dos blocos}
@@ -39,12 +39,12 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     O projeto proposto apresenta algumas condições restritivas, conforme descrito nos próximos subitens.
 
         \subsubsection{Custos}
-        Apesar do jogo precisar de materiais relativamente baratos para ser jogado, como blocos impressos em 3D ou até mesmo papéis coloridos dobrados de forma semelhante aos blocos impressos, ainda se faz necessário o uso de um celular com sistema operacional Android com câmera para que o aplicativo funcione. 
+        Apesar do jogo precisar de materiais relativamente baratos para ser jogado, como blocos impressos em 3D e também se faz necessário o uso de um celular com sistema operacional Android com câmera para que o aplicativo funcione. 
         
         São necessários 20 blocos para jogar o jogo de forma completa, ou seja, todas as fases. O preço médio de 1kg de filamento de PLA na data da escrita deste documento, considerando diferentes cores e frete, o que é necessário para distinção dos blocos, é de R\$150,00. Portanto, considerando que cada blocos possui 10cm x 10cm x 5mm, estima-se o custo de R\$10,00 por bloco, totalizando um total de R\$200,00.
             
         \subsubsection{Físicas e Ambientais}
-        Apesar, quando impressos em 3D, dos bloco terem uma boa durabilidade, com o passar do tempo ficarão inutilizáveis. Portanto deve-se orientar os usuários do aplicativo jogo a fazer o descarte adequado dos blocos físicos depois de inutilizáveis, seja por desgaste dos blocos ou por falta de uso, o que vai de encontro com uma das propostas levantada pelo aplicativo jogo, a reciclagem.
+        Apesar, quando impressos em 3D, dos blocos terem uma boa durabilidade, com o passar do tempo ficarão inutilizáveis. Portanto deve-se orientar os usuários do jogo a fazer o descarte adequado dos blocos físicos depois de se tornarem inutilizáveis, seja por desgaste dos blocos ou por falta de uso, o que vai ao encontro com uma das propostas levantada pelo aplicativo jogo, a reciclagem.
         
         \subsubsection{Tecnológicas}
         O aplicativo jogo necessita de um celular com câmera e com o sistema operacional Android com a versão igual ou superior a 5.0 - Lollipop. Por se tratar de um protótipo, o aplicativo não oferece suporte para os demais dispositivos móveis com outros sistemas operacionais, como por exemplo iPhone. 
@@ -55,16 +55,16 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \subsubsection{Interferências devido ao meio}
         O aplicativo jogo precisa de conexão com internet para funcionar. Obstáculos como objetos metálicos ou paredes podem causar interferências no sinal Wi-Fi. Eletrônicos e eletrodomésticos, como por exemplo micro-ondas, operam na mesma frequência do roteador wireless, 2,4 GHz, que quando ligados, também podem contribuir com interferências dificultando ou até impossibilitando o uso do aplicativo.
         
-        O captura das imagens no jogo também precisará ser feita sub luz ambiente, não escuro e também não sob incidência solar. A captura das imagens também deverá ser realizada segundo as orientações de posicionamento que o jogo dará. O não cumprimento dessas orientações pode impactar diretamente no funcionameto do jogo.
+        O captura das imagens no jogo também precisará ser feita sob luz ambiente, não escuro e também não sob incidência solar. A captura das imagens também deverá ser realizada segundo as orientações de posicionamento que o jogo dará. O não cumprimento dessas orientações pode impactar diretamente no funcionameto do jogo.
     
     \subsection{Benefícios e Impactos}
     O aplicativo jogo apresenta alguns benefícios e impactos, conforme descrito nos próximos subitens.
 
         \subsubsection{Econômicos}
-        Além de um celular com câmera, o aplicativo jogo proposto é capaz de funcionar com recursos relativamente baratos, como blocos impressos em 3D ou até mesmo uma folha colorida dobrada em formatos semelhantes aos cubos; o aplicativo jogo também funciona de forma simples. Portanto pode ser utilizado em casa ou implantado em escolas de forma fácil e econômica para proporcionar às crianças um contato inicial com temas como lógica de programação e sustentabilidade, além de atender às novas demandas da BNCC para o ensino.
+        Além de um celular com câmera, o aplicativo jogo proposto é capaz de funcionar com recursos relativamente baratos, como blocos impressos em 3D; jogo também funciona de forma simples. Portanto pode ser utilizado em casa ou implantado em escolas de forma fácil e econômica para proporcionar às crianças um contato inicial com temas como lógica de programação e sustentabilidade, além de atender às novas demandas da BNCC para o ensino.
         
         \subsubsection{Operacionais}
-        O aplicativo jogo pode ser aplicado em ambiente escolar. Por ser uma ferramenta que difere dos métodos tradicionais de ensino das escolas, pode ser uma experiência lúdica o que impacta diretamente na rotina das crianças. Porém para utilização em ambiente escolar, recomenda-se uma sala com um amplo espaço para posicionamento dos blocos e um profissional da educação para monitorar o uso.
+        O jogo pode ser aplicado em ambiente escolar. Por ser uma ferramenta que difere dos métodos tradicionais de ensino das escolas, pode ser uma experiência lúdica o que impacta diretamente na rotina das crianças. Porém para utilização em ambiente escolar, recomenda-se uma sala com um amplo espaço para posicionamento dos blocos e um profissional da educação para monitorar o uso.
         
         \subsubsection{Estratégicos}
         A mais nova atualização da Base Nacional Comum Curricular destina uma de suas dez competência à educação integral por meio de tecnologias digitais e faz uso, no caderno de matemática, do termo “pensamento computacional”. Pensando nisso, o aplicativo jogo proposto possibilita, de uma forma estratégica, um meio para trabalhar essas competências nas escolas. 
@@ -73,7 +73,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         Não se aplica.
 
         \subsubsection{Sociais}
-        O aplicativo jogo apresenta benefícios sociais para as crianças, pois as crianças terão acessos a conceitos básicos de lógica de programação e oportunidade de exercitar esse conceitos, o que pode auxiliar em competências como raciocínio lógico, resolução de problemas, pensamento computacional, entre outras habilidades que tem sido cada vez mais requisitadas no mercado de trabalho. Sendo esses conceitos trabalhados por meio de um jogo, além de gerar maior engajamento por parte das crianças, pode desenvolver também, competências como cooperação, cumprimento de regras, controle de impulsividade, auxílio na tomada de decisões, mais facilidade para lidar com erros e fracassos entre outras habilidades sociais que jogos são capazes de desenvolver.
+        O aplicativo jogo apresenta benefícios sociais para as crianças, pois as crianças terão acessos a conceitos básicos de lógica de programação e oportunidade de exercitar esse conceito, o que pode auxiliar em competências como raciocínio lógico, resolução de problemas, pensamento computacional, entre outras habilidades que tem sido cada vez mais requisitadas no mercado de trabalho. Sendo esses conceitos trabalhados por meio de um jogo, além de gerar maior engajamento por parte das crianças, pode desenvolver também, competências como cooperação, cumprimento de regras, controle de impulsividade, auxílio na tomada de decisões, mais facilidade para lidar com erros e fracassos entre outras habilidades sociais que jogos são capazes de desenvolver.
         Além disso, o jogo, por meio do tema de reciclagem, pode desenvolver senso de sustentabilidade auxiliando na compreensão da importância do descarte correto do lixo, o que impacta direta e positivamente  o meio ambiente.
         % Revisar escrita
 
@@ -90,11 +90,11 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     \end{itemize}
     
     O sistema tem como atores a criança e o professor/tutor. A criança é responsável pela interação com os blocos e aplicativo.
-    O professor/tutor é responsável pela interação com os dados adquiridos durante a partida da criança.
+    O professor/tutor é responsável pela interação com os dados adquiridos durante a partida jogada pela criança.
     
     \subsection{Comunicação}
     A comunicação entre o aplicativo e o servidor ocorrerá de maneira bidirecional e utilizará arquitetura \textit{REST}, através da conexão Wi-Fi com a Internet.
-    O aplicativo envia os dados e imagens para o servidor. Após o servidor salvar os dados e processar as imagens, ele retorna as ações a serem executadas para o aplicativo.
+    O aplicativo envia os dados e imagens para o servidor. Após o servidor salvar os dados e processar as imagens, ele retorna as ações para serem executadas no aplicativo.
     
     O \textit{REST (Representational State Transfer)} é uma abstração da arquitetura da \textit{Web}. Consistem em regras que permitem a criação de projetos com interfaces bem definidas, permitindo a comunicação entre aplicações.
     
@@ -108,7 +108,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
   
     O jogo possuirá 4 desafios, cada um explorando um tipo de bloco. Ao inicio de cada fase, será executado uma animação para mostrar a ação que o tipo de bloco apresentado na fase executará juntamente com a sua forma de utilização.
     
-    A primeira fase, apresentada na Figura \ref{figura:fase_1} trabalha a utilização do bloco andar. Para completar a fase com sucesso, a criança precisará utilizar uma combinação de três blocos andar para coletar o lixo e levá-lo a lixeira correta. Ao final dessa fase, será apresentado um vídeo informativo sobre o descarte correto de plástico.
+    A primeira fase, apresentada na Figura \ref{figura:fase_1} trabalha a utilização do bloco "andar". Para completar a fase com sucesso, a criança precisará utilizar uma combinação de três blocos andar para coletar o lixo e levá-lo a lixeira correta. Ao final dessa fase, será apresentado um vídeo informativo sobre o descarte correto de plástico.
     
     \begin{figure}[H]
         \caption{Fase 1}
@@ -118,7 +118,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \label{figura:fase_1}
     \end{figure}
     
-    A segunda fase, apresentada na Figura \ref{figura:fase_2} trabalha a utilização do bloco virar noventa graus. Para completar a fase com sucesso, a criança precisará utilizar uma combinação de quatro blocos andar e um bloco virar 90 graus para coletar o lixo e levá-lo a lixeira correta. Ao final dessa fase, será apresentado um vídeo informativo sobre o descarte correto de papel.
+    A segunda fase, apresentada na Figura \ref{figura:fase_2} trabalha a utilização do bloco "virar a noventa graus". Para completar a fase com sucesso, a criança precisará utilizar uma combinação de quatro blocos andar e um bloco virar 90 graus para coletar o lixo e levá-lo a lixeira correta. Ao final dessa fase, será apresentado um vídeo de instrução sobre o descarte correto de papel.
     
     \begin{figure}[H]
         \caption{Fase 2}
@@ -128,7 +128,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \label{figura:fase_2}
     \end{figure}
     
-    A terceira fase, apresentada na Figura \ref{figura:fase_3} trabalha a utilização do bloco esperar. Para completar a fase com sucesso, a criança precisará utilizar uma combinação de cinco blocos andar e um bloco esperar para coletar o lixo e levá-lo a lixeira correta. Ao final dessa fase, será apresentado um vídeo informativo sobre o descarte correto de metal.
+    A terceira fase, apresentada na Figura \ref{figura:fase_3} trabalha a utilização do bloco "esperar". Para completar a fase com sucesso, a criança precisará utilizar uma combinação de cinco blocos andar e um bloco esperar para coletar o lixo e levá-lo a lixeira correta. Ao final dessa fase, será apresentado um vídeo informativo sobre o descarte correto de metal.
     
     \begin{figure}[H]
         \caption{Fase 3}
@@ -138,7 +138,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \label{figura:fase_3}
     \end{figure}
     
-    A quarta fase, apresentada na Figura \ref{figura:fase_4} trabalha a utilização do bloco de repetição. Para completar a fase com sucesso, a criança precisará utilizar uma combinação de quatro blocos andar, um bloco esperar e um bloco virar 90 graus juntamente do bloco de repetição e o bloco numérico 2 para coletar o lixo e levá-lo a lixeira correta. Ao final dessa fase, será apresentado um vídeo informativo sobre o descarte correto de vidro.
+    A quarta fase, apresentada na Figura \ref{figura:fase_4} trabalha a utilização do bloco de "repetição". Para completar a fase com sucesso, a criança precisará utilizar uma combinação de quatro blocos andar, um bloco esperar e um bloco virar 90 graus juntamente do bloco de repetição e o bloco numérico 2 para coletar o lixo e levá-lo a lixeira correta. Ao final dessa fase, será apresentado um vídeo informativo sobre o descarte correto de vidro.
     
     \begin{figure}[H]
         \caption{Fase 4}
@@ -178,7 +178,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     \end{figure}
     
     Nessa tela, é possível ver a lista de desafios, um desafio só poderá ser iniciado caso o anterior tenha sido resolvido.
-    É possível clicar no botão voltar para retornar à tela anterior. Ao clicar no botão iniciar do desafio, a criança poderá ser direcionada para a tela de cadastro ou direto para a tela do desafio. Caso a criança não tenha preenchido as informações para identificá-la, essas informações serão coletadas em uma tela específica, conforme Figura \ref{figura:cadastro}. Caso contrário ela é direcionada para a tela que contém o desafio a ser solucionado.
+    É possível clicar no botão "voltar" para retornar à tela anterior. Ao clicar no botão "iniciar" do desafio, a criança poderá ser direcionada para a tela de cadastro ou direto para a tela do desafio. Caso a criança não tenha preenchido as informações para identificá-la, essas informações serão coletadas em uma tela específica, conforme Figura \ref{figura:cadastro}. Caso contrário ela é direcionada para a tela que contém o desafio a ser solucionado.
     
     \begin{figure}[H]
         \caption{Tela de Cadastro}
@@ -198,7 +198,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \label{figura:tela_jogo}
     \end{figure}
     
-    Nessa tela é possível executar duas ações. Clicando no botão voltar, a criança é redirecionada para a lista de desafios. Selecionando o botão Fotografar Solução, é aberta uma janela, conforme Figura \ref{figura:fotografar_blocos} para fotografar a solução.
+    Nessa tela é possível executar duas ações. Clicando no botão "voltar", a criança é redirecionada para a lista de desafios. Selecionando o botão "Fotografar Solução", é aberta uma janela, conforme Figura \ref{figura:fotografar_blocos} para fotografar a solução.
     
     \begin{figure}[H]
         \caption{Tela para fotografar a solução}
@@ -208,7 +208,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \label{figura:fotografar_blocos}
     \end{figure}
     
-    Cada bloco deve ser fotografado e adicionado utilizando o botão Novo Bloco.
+    Cada bloco deve ser fotografado e adicionado utilizando o botão "Novo Bloco".
     Ao fotografar todos os blocos, pode-se clicar no botão enviar para que a solução seja processada.
     Após a conversão da foto em ações para o jogo, o usuário é direcionado para a tela de jogo onde as ações convertidas serão executadas.
     Caso o personagem chegue com o lixo na lixeira correta , será apresentada uma mensagem de sucesso, conforme Figura \ref{figura:solucao_correta}. Caso contrário, será apresentada a mensagem de falha, permitindo uma nova tentativa, Figura \ref{figura:solucao_incorreta}.
@@ -243,7 +243,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     O Sistema não apresentará sistemas controlados automaticamente.
     
     \subsection{Aquisição de dados e Atuação}
-    A coleta das fotos se dará através da ação da criança que está jogando. Após concluir a proposta de solução do desafio, a criança deve capturar sua proposta utilizando a câmera do dispositivo móvel, como mostrado na Figura \ref{figura:crianca_blocos}.
+    A coleta das fotos se dará por meio da ação da criança que está jogando. Após concluir a proposta de solução do desafio, a criança deve capturar sua proposta utilizando a câmera do dispositivo móvel, como mostrado na Figura \ref{figura:crianca_blocos}.
     
     \begin{figure}[H]
         \caption{Criança capturando a solução}
@@ -277,7 +277,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     \end{figure}
     
     \subsubsection{Blocos Numéricos}
-        Os blocos numéricos são identificados pela cor verde e pelos números de um a nove, conforme apresentado na Figura \ref{figura:blocos_numericos}. Eles possuem um encaixe diferente dos demais, somente encaixam nos blocos de repetição, pois são utilizados para identificar a quantidade de vezes que o bloco de repetição irá repetir. Não podem ser utilizados com outros blocos ou até mesmo sozinho.
+        Os blocos numéricos são identificados pela cor verde e pelos números de um a nove, conforme apresentado na Figura \ref{figura:blocos_numericos}. Eles possuem um encaixe diferente dos demais e por isso somente encaixam nos blocos de repetição, pois são utilizados para identificar a quantidade de vezes que o bloco de repetição irá repetir. Tais blocos númericos não podem ser utilizados com outros blocos ou até mesmo sozinhos.
         
         \begin{figure}[H]
             \caption{Blocos Numéricos}
@@ -289,8 +289,8 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     
     \subsubsection{Ações Diretas}
         As ações diretas são ações que não possuem necessidade de outros blocos, ou seja, podem ser utilizadas sozinhas.
-        O jogo possui 3 ações diretas, sendo elas, andar, virar noventa graus e esperar. 
-        A ação andar movimenta o personagem para frente uma única vez, seu bloco é identificado pela cor amarela e pelo simbolo de um boneco andando, conforme apresentado na Figura \ref{figura:andar}.
+        O jogo possui 3 ações diretas, sendo elas, "andar", "virar noventa graus" e "esperar". 
+        A ação "andar" movimenta o personagem para frente uma única vez, seu bloco é identificado pela cor amarela e pelo simbolo de um boneco andando, conforme apresentado na Figura \ref{figura:andar}.
         
         \begin{figure}[H]
             \caption{Andar}
@@ -300,7 +300,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
             \label{figura:andar}
         \end{figure}
         
-        A ação virar noventa graus rotaciona o personagem noventa graus para a esquerda, seu bloco é identificado pela cor azul e o simbolo de uma seta apontando para a esquerda, conforme apresentado na Fugira \ref{figura:virar}.
+        A ação "virar noventa graus" rotaciona o personagem noventa graus para a esquerda, seu bloco é identificado pela cor azul e o simbolo de uma seta apontando para a esquerda, conforme apresentado na Figura \ref{figura:virar}.
         
         \begin{figure}[H]
             \caption{Virar noventa graus}
@@ -310,7 +310,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
             \label{figura:virar}
         \end{figure}
         
-        A ação esperar mantém o personagem parado no cenário, sem executar nenhuma outra ação, seu bloco é identificado pela cor laranja e o simbolo de uma ampulheta, conforme apresentado na Figura \ref{figura:esperar}
+        A ação "esperar"' mantém o personagem parado no cenário, sem executar nenhuma outra ação, seu bloco é identificado pela cor laranja e o simbolo de uma ampulheta, conforme apresentado na Figura \ref{figura:esperar}
         
         \begin{figure}[H]
             \caption{Esperar}
@@ -321,7 +321,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         \end{figure}
         
     \subsubsection{Ação de Repetição}
-        A ação de repetição é identificada pela cor roxa e pelo simbolo de duas flechas em formato oval, conforme apresentado na Figura \ref{figura:repetir}. É uma ação que possui necessidade de mais blocos para ser executada, não podendo ser utilizada sozinha.
+        A "ação de repetição" é identificada pela cor roxa e pelo símbolo de duas flechas em formato oval, conforme apresentado na Figura \ref{figura:repetir}. É uma ação que possui necessidade de mais blocos para ser executada, não podendo ser utilizada sozinha.
         
         \begin{figure}[H]
             \caption{Repetir}
@@ -331,7 +331,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
             \label{figura:repetir}
         \end{figure}
         
-        Para criar uma repetição é preciso a utilização de um bloco de repetição seguido das ações diretas a serem repetidas e outro bloco de repetição para finalização. Possui um encaixe na parte superior para ser colocado um bloco numérico, que identificará a quantidade de vezes que as ações devem ser executadas. O bloco numérico precisará constar somente no bloco de repetição de inicio. Caso não seja utilizado um bloco numérico em conjunto, ficará executando infinitamente. A Figura \ref{figura:exemplo_repeticao} mostra um exemplo de repetição, onde as ações andar e virar noventa graus serão repetidas infinitamente.
+        Para criar uma repetição é preciso a utilização de um bloco de repetição seguido das ações diretas a serem repetidas e outro bloco de "repetição" para "finalização". Possui um encaixe na parte superior para ser colocado um bloco numérico, que identificará a quantidade de vezes que as ações devem ser executadas. O bloco numérico precisará constar somente no bloco de repetição de inicio. Caso não seja utilizado um bloco numérico em conjunto, ficará executando infinitamente. A Figura \ref{figura:exemplo_repeticao} mostra um exemplo de repetição, onde as ações "andar" e "virar noventa graus" serão repetidas infinitamente.
         
         \begin{figure}[H]
             \caption{Exemplo de repetição}
@@ -345,7 +345,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     O jogo será desenvolvido para celulares Android utilizando o Unity 3D. A arquitetura do software para reconhecimento dos blocos será baseada em serviços cloud, utilizando a IBM Cloud como provedor.
     O servidor, programado em Python, utilizará o serviço IBM Cloud Foundry. O banco de dados, não relacional, utilizará o serviço IBM Cloudant.
     
-    O Cloud Foundry é um servico \textit{PAAS (Platform as a Service)} que permite implementar e ajustar a escala de aplicativos de maneira rápida, simples e barata. O IBM Cloudant é um serviço de banco de dados distribuído, desenvolvido no Apache CouchDB, é otimizado para grandes cargas e rápido crescimento.
+    O \emph{Cloud Foundry} é um servico \textit{PAAS (Platform as a Service)} que permite implementar e ajustar a escala de aplicativos de maneira rápida, simples e barata. O IBM Cloudant é um serviço de banco de dados distribuído, desenvolvido no Apache CouchDB, que é otimizado para grandes cargas e rápido crescimento.
     
     Nos tópicos a seguir, são apresentados os diagramas do software que representam o seu funcionamento.
         
@@ -363,7 +363,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
         
         \subsubsection{Diagramas de Sequência}
         
-        Nesse tópico são apresentados os diagramas de sequencia para as funcionalidades principais do aplicativo.
+        Nesse tópico são apresentados os diagramas de sequência para as funcionalidades principais do aplicativo.
         
         \subsubsubsection{Criação de Perfil}
         
