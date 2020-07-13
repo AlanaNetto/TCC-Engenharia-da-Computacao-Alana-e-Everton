@@ -151,7 +151,16 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
 
     \subsubsection{Reconhecimento dos blocos}
      
-     Para etapa de reconhecimentos dos blocos será utilizado a linguagem de programação Python versão 3 juntamente com o módulo de processamento digital de imagens OpenCV.
+     Para etapa de reconhecimentos dos blocos será utilizado a linguagem de programação Python versão 3, juntamente com o módulo de processamento digital de imagens OpenCV.
+ Como citado anteriormente, existem 5 tipos de blocos, sendo que cada classe possui características distintas de construção e acabamento, como cor e símbolos. Essas características serão utilizadas como base no reconhecimento dos blocos.
+    
+    Primeiramente, para preparar as imagens para as segmentações, serão utilizadas técnicas como filtros e equalização de histogramas, com o objetivo de reduzir ruídos nas imagens, evidenciar características como cores e tratar diferentes iluminações. 
+    Após essa etapa será realizada a detecção das bordas para delimitar as linhas que compõem o segmento de imagem dos blocos. Depois da detecção das bordas, será feito a limiarização, isto é, a transformação da imagem em tons de cinza, para gerar uma imagem em formato binário que representa a região dos blocos.  
+    
+    Nas etapas antecedentes, as técnicas utilizadas tem o objetivo de ressaltar características dos blocos como variação de contraste, segmento retangular dos blocos, bordas e símbolos. Nesta etapa  será realizada a extração de características das imagens por meio da segmentação de cada bloco, o que será possível por conta das diferentes cores dos blocos. Da mesma forma, após a segmentação de cada bloco, poderá ser feita a segmentação dos símbolos através da diferença de cor entre os blocos e os símbolos.
+    
+	Depois de cada bloco segmentado e com suas características extraídas, informações como cor, símbolos e posição no primeiro segmento dos blocos serão armazenadas em uma variável que será utilizada para a reconhecimento e classificação de cada bloco.
+	Por fim, a etapa de reconhecimento dos blocos enviará para o jogo a informação de quais blocos estão contidos na imagem e suas respectivas posições para que o jogo execute os comandos programados pela criança.
 
     
     
