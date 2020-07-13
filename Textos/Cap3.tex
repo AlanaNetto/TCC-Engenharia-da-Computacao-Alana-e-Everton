@@ -39,7 +39,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
     O projeto proposto apresenta algumas condições restritivas, conforme descrito nos próximos subitens.
 
         \subsubsection{Custos}
-        Apesar do jogo precisar de materiais relativamente baratos para ser jogado, como blocos impressos em 3D e também se faz necessário o uso de um celular com sistema operacional Android com câmera para que o aplicativo funcione. 
+        Apesar do jogo precisar de materiais relativamente baratos para ser jogado, como blocos impressos em 3D, também se faz necessário o uso de um celular com sistema operacional Android com câmera para que o aplicativo funcione. 
         
         São necessários 20 blocos para jogar o jogo de forma completa, ou seja, todas as fases. O preço médio de 1kg de filamento de PLA na data da escrita deste documento, considerando diferentes cores e frete, o que é necessário para distinção dos blocos, é de R\$150,00. Portanto, considerando que cada blocos possui 10cm x 10cm x 5mm, estima-se o custo de R\$10,00 por bloco, totalizando um total de R\$200,00.
             
@@ -151,7 +151,7 @@ Neste capítulo são apresentadas as especificações do sistema, as condições
 
     \subsubsection{Reconhecimento dos blocos}
      
-     Para etapa de reconhecimentos dos blocos será utilizado a linguagem de programação Python versão 3, juntamente com o módulo de processamento digital de imagens OpenCV.
+     Para a etapa de reconhecimentos dos blocos será utilizado a linguagem de programação Python versão 3, juntamente com o módulo de processamento digital de imagens OpenCV.
  Como citado anteriormente, existem 5 tipos de blocos, sendo que cada classe possui características distintas de construção e acabamento, como cor e símbolos. Essas características serão utilizadas como base no reconhecimento dos blocos.
     
     Primeiramente, para preparar as imagens para as segmentações, serão utilizadas técnicas como filtros e equalização de histogramas, com o objetivo de reduzir ruídos nas imagens, evidenciar características como cores e tratar diferentes iluminações. 
