@@ -36,9 +36,60 @@
 
 \section{Software}
 
-Para apresentar todos os softwars que compõem o aplicativo, esta seção é dividida em três subseções: software do jogo, software de reconhecimento dos blocos e por fim integração dos softwares.
+Para apresentar todos os softwares que compõem o aplicativo, esta seção é dividida em três subseções: jogo, software de reconhecimento dos blocos e por fim integração dos softwares.
 
-    \subsection{Software do jogo}
+    \subsection{Jogo}
+    
+    Para o desenvolvimento do jogo foi utilizado a engine Unity 3D, assets gratuitos obtidos no site Flaticon e o editor de código Visual Studio Code, a linguagem de programação utilizada foi C\# (CSharp), o jogo foi desenvolvido para smartphones com a plataforma Android 5.0 ou superior, sendo necessário acesso a internet para que o mesmo funcione.
+    
+    Ao iniciar o aplicativo, é apresentado para a criança o menu do jogo, onde ela consegue visualizar os desafios disponíveis e os desafios já resolvidos. O fluxograma apresentado na Figura \ref{figura:fluxo_telas} mostra o fluxo de telas do menu do jogo.
+    
+    \begin{figure}[H]
+        \caption{Fluxo de Telas do menu}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/Cap4/fluxo_menu.jpeg}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:fluxo_telas}
+    \end{figure}
+    
+    Ao jogar pela primeira vez é solicitado duas informações, nome e idade, para identificar a criança. Essas informações são salvas localmente no smartphone e serão enviadas para o servidor junto com o envio de cada solução dos desafios, todas as soluções, corretas ou não, serão salvas no banco de dados para análise estatística e desempenho de cada criança.
+    
+    \subsubsection{Objetos e Controladores}
+    
+    O jogo possui dois objetos bases, o lixo e a lixeira. O lixo possui 4 parâmetros apresentados na Figura \ref{figura:parametros_lixo}. O parâmetro \textit{Trash Type} representa o tipo do Lixo (Papel, Plástico, Metal e Vidro), o parâmetro \textit{Collected} representa se o lixo foi coletado no cenário, o \textit{Discarted} representa se o lixo foi descartado e o \textit{Discarted Correctly} representa se o lixo foi descartado na lixeira correta. 
+    
+    \begin{figure}[H]
+        \caption{Parâmetros do Objeto Lixo Papel}
+        \centering
+        \includegraphics[width=10cm]{Imagens/Cap4/parametros_lixo.png}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:parametros_lixo}
+    \end{figure}
+    
+    A lixeira possui apenas um parâmetro conforme apresentado na Figura \ref{figura:parametro_lixeira}, o \textit{Trash Type Accepted} que representa qual tipo de lixo aquela lixeira aceita.
+    
+    \begin{figure}[H]
+        \caption{Parâmetros do Objeto Lixeira Metal}
+        \centering
+        \includegraphics[width=10cm]{Imagens/Cap4/parametro_lixeira.png}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:parametro_lixeira}
+    \end{figure}
+    
+    O gerenciamento da câmera do dispositivo é feita através de um controlador, ele é responsável por controlar as funções básicas da câmera (abrir, fechar e tirar foto) e inciar o processo de envio da imagem para que ela possa ser interpretada pelo software de reconhecimento.
+    
+    Cada fase do jogo, possui uma quantidade especifica de objetos (Lixo e lixeiras), de acordo com seu nível de dificuldade, e um controlador, apresentado na Figura \ref{figura:controlador_fases}, responsável por gerenciar o envio, compilação e execução da solução, além de identificar quando o a solução proposta está correta ou não. 
+    
+    \begin{figure}[H]
+        \caption{Controlador das Fases}
+        \centering
+        \includegraphics[width=10cm]{Imagens/Cap4/controlador_fases.png}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:controlador_fases}
+    \end{figure}
+    
+    Após receber o retorno do software de reconhecimento, a lista com os blocos passa por um compilador que verifica se a solução enviada foi estruturada corretamente, esse processo inclui a verificação da quantidade de loops e blocos numéricos presentes na solução. Após a conclusão, bem sucedida, do processo de compilação, é iniciado o processo de execução e logo em seguida a identificação se a solução enviada atingiu os objetivos da fase. Para que a identificação seja possível, o controlador possui uma lista dos lixos dispostos no cenário e valida se todos os lixos foram coletados e descartados corretamente.
+    
     
     \subsection{Software de reconhecimento dos blocos}
     
@@ -128,7 +179,7 @@ Para apresentar todos os softwars que compõem o aplicativo, esta seção é div
     \begin{figure}[H]
         \caption{Exemplo Tratametno para OCR - após tratamento}
         \centering
-        \includegraphics[width=10cm]{Imagens/Cap4/ex2_tratado.PNG}
+        \includegraphics[width=8cm]{Imagens/Cap4/ex2_tratado.PNG}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:ex2_tratado}
     \end{figure}
@@ -140,11 +191,6 @@ Para apresentar todos os softwars que compõem o aplicativo, esta seção é div
     Durante as etapas anteriores, na medida em que os blocos são reconhecidos, os seus significados e, por meio da função achar contornos, suas coordenadas são armazenadas em uma estrutura de dados python conhecida com tupla.
     
     Por fim, esta estrutura que contém os blocos e suas respectivas posições na imagem é ordenada baseada nas coordenadas do menor valor de X para o maior valor de X, em outras palavras, da esquerda para a direita da imagem. Esses valores então são  encapsulados em uma estrutura JSON e são enviados como retorno da API para o aplicativo jogo.
-    
-
-
-
-
 
     \subsection{Integração dos Softwares}
     
