@@ -93,14 +93,14 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
     
     \subsection{Software de reconhecimento dos blocos}
     
-    O software de reconhecimento dos blocos é uma API, isto é, uma Interface de programação de aplicações,  desenvolvida em python. Os principais módulos utilizados no desenvolvimento deste software são openCV, numpy, pytesseract, flask, json, entre outras.
+    O software de reconhecimento dos blocos é uma API, isto é, uma interface de programação de aplicações,  desenvolvida em Python. Os principais módulos utilizados no desenvolvimento deste software são OpenCV, numpy, pytesseract e flask.
 
-    Com base no referencial teórico deste trabalho sobre visão computacional, foi desenvolvido uma API capaz de receber uma imagem dos blocos, reconhecer-los com base nas classes de blocos propostos e por fim retornar os blocos contidos na imagem submetida no formato JSON. O software de reconhecimento é limitado às seguintes restrições:
+    Com base no referencial teórico deste trabalho sobre visão computacional, foi desenvolvida uma API capaz de receber uma imagem dos blocos, reconhecê-los com base nas classes de blocos propostos e por fim retornar os blocos contidos na imagem submetida no formato JSON. O software de reconhecimento é limitado às seguintes restrições:
     
         \begin{itemize}
         \item Os blocos a serem reconhecidos devem exclusivamente ser desenvolvidos pelos pesquisadores e desenvolvedores deste trabalho, qualquer cópia poderá não funcionar como proposto;
         \item A imagem deve estar iluminada adequadamente (sem sombras);
-        \item As cores do plano no qual os blocos estiverem dispostos devem ser diferentes das cores de qualquer um dos blocos (preferencialmente braco);
+        \item As cores do plano no qual os blocos estiverem dispostos devem ser diferentes das cores de qualquer um dos blocos (preferencialmente branco);
         \item A imagem deve ser capturada de forma perpendicular à superfície na qual os blocos estejam dispostos;
        \item Os blocos a serem reconhecidos devem estar centralizados na imagem e não podem estar cortados;
       \item Os blocos a serem reconhecidos não podem estar sobrepostos.
@@ -110,7 +110,7 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
     Nas subseções subsequentes está descrito, com exemplos, o funcionamento de cada etapa do software de reconhecimento dos blocos.
     
     \begin{figure}[H]
-        \caption{Fluxograma Algoritimo de Reconhecimento dos Blocos}
+        \caption{Fluxograma de Reconhecimento dos Blocos}
         \centering
         \includegraphics[width=\linewidth]{Imagens/Cap4/fluxo.PNG}
         \legend{\small{Fonte: o autor (2020)}}
@@ -120,22 +120,22 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
 
     \subsubsection{Aquisição}
     
-    Após o recebimento da imagem através do protocolo http POST, é necessário converter a imagem de bytes para um vetor numpy através do comando fromstring do módulo numpy, pois é neste formato que o módulo opencv é capaz de ler as imagens. 
+    Após o recebimento da imagem através do protocolo http POST, é necessário converter a imagem de bytes para um vetor numpy através do comando \textit{fromstring} do módulo numpy, pois é neste formato que o módulo OpenCV é capaz de ler as imagens. 
     
     Uma etapa comum em visão computacional é o redimensionamento  das imagens, porém neste caso não se fez necessário o redimensionamento pois as imagens já são enviadas em um tamanho pré definido pelo aplicativo jogo.
 
     \subsubsection{Conversão de BGR para HSV}
-    O padrão HSV consiste em cor, retratado como Hue; a saturação da cor por Saturation e por fim o brilho, chamado de value, por conta disso possui o nome HSV.
+    O padrão HSV consiste em cor, retratado como \textit{Hue}; a saturação da cor por \textit{Saturation} e por fim o brilho, chamado de \textit{value}, por conta disso possui o nome HSV.
     
-    A etapa de conversão de BGR para HSV é fundamental, pois é por meio deste padrão que as máscaras, utilizadas para isolar cada cor da imagem é criada. Portanto é por conta desta etapa que a segmentação por cores se torna possível.
+    A etapa de conversão de BGR (\textit{blue}, \textit{green} e \textit{red}) para HSV é fundamental, pois é por meio deste padrão que as máscaras, utilizadas para isolar cada cor da imagem é criada. Portanto é por conta desta etapa que a segmentação por cores se torna possível.
 
     
     \subsubsection{Segmentação Por Cor}
     Nesta etapa a imagem inicial se desfaz em N imagens, onde N  é o número de blocos distintos na imagem submetida para reconhecimento dos blocos.
     
-    Nesta etapa o algoritmo compara a imagem submetida para o reconhecimento com um máscara e realiza uma filtragem de cores. Estas máscaras são criadas a partir de 3 parâmetros, o máximo de valores BGR para uma determinada cor, o mínimo valores BGR para a mesma cor, e por fim com os valores da imagem gerada através da conversão BGR para HSV da etapa anterior. 
+    Nesta etapa o algoritmo compara a imagem submetida para o reconhecimento com uma máscara e realiza uma filtragem de cores. Estas máscaras são criadas a partir de 3 parâmetros, o máximo de valores BGR para uma determinada cor, o mínimo valores BGR para a mesma cor, e por fim com os valores da imagem gerada através da conversão BGR para HSV da etapa anterior. 
     
-    No momento em que a imagem passa por este filtro de segmentação de cor as componentes de cor que não fazem parte do espectro definido como máximo e mínimo são zeradas, resultando em uma imagem com apenas a cor que faz parte do espectro especificado, como ilustrado nas Figuras \ref{figura:ex1_original} e \ref{figura:ex1_tratado}.
+    No momento em que a imagem passa por este filtro de segmentação de cor, as componentes de cor que não fazem parte do espectro definido como máximo e mínimo são zeradas, resultando em uma imagem com apenas a cor que faz parte do espectro especificado, como ilustrado nas Figuras \ref{figura:ex1_original} e \ref{figura:ex1_tratado}, nas quais, pode-se ver o antes e depois da segmantação da cor laranja de uma imagem com diversos blocos de cores distintas.
     
     \begin{figure}[H]
         \caption{Exemplo de segmentação por cor - original}
@@ -159,13 +159,33 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
 
     Através das máscaras HSV geradas, é realizada uma busca por contornos das cores que fazem parte do espectro determinado para cada cor.
     
-    Depois que os contornos são encontrados, verifica-se se algum contorno possui área maior que um valor X. Se a área do contorno for maior que o valor pré determinado, o algoritmo assume, considerando a limpeza de ruídos feita na etapa de segmentação de cores e o tamanho da área encontrado nesta etapa, que aquela seção da imagem corresponde a um bloco da cor da máscara testada. Portanto por meio desta etapa, já é possível reconhecer os blocos que possuem somente uma cor para um símbolo, isto é, laranja - esperar, amarelo - caminhar, azul - virar e roxo - repetir.
+    Depois que os contornos são encontrados, verifica-se se algum contorno possui área maior que um valor X, o qual varia dependendo do bloco, como ilustrado na tabela de valores mínimos de áreas \ref{table:area_values}. Se a área do contorno for maior que o valor pré determinado, o algoritmo assume, considerando a limpeza de ruídos feita na etapa de segmentação de cores e o tamanho da área encontrado nesta etapa, que aquela seção da imagem corresponde a um bloco da cor da máscara testada. Portanto por meio desta etapa, já é possível reconhecer os blocos que possuem somente uma cor para um símbolo, isto é, laranja - esperar, amarelo - caminhar, azul - virar e roxo - repetir.
     
     
+    \begin{center}
+    \begin{tabular}{ |c|c| } 
+     \hline
+    Cor     & Mínimo valor de área \\
+     \hline
+    Azul    & 10000                \\
+     \hline
+    Amarelo & 7500                 \\
+     \hline
+    Laranja & 10000                \\
+     \hline
+    Roxo    & 12500                \\
+     \hline
+    Verde   & 10000                \\    [0.5ex]    
+     \hline
+    
+    \end{tabular}
+    \label{table:area_values}
+    \end{center}
+        
     \subsubsection{Reconhecimento Numérico}
     Por fim, para o reconhecimento dos blocos numéricos se faz necessário uma etapa de OCR, ou seja, reconhecimento ótico de caracteres, pois não são possíveis descrevê-los totalmente pelas etapas anteriores, pois além da cor verde, também é preciso determinar seu símbolo.
     
-    Antes da etapa de OCR, a imagem passa por um função de corte, na qual a região do símbolo a ser reconhecido é isolado com objetivo de diminuir possíveis erros da etapa de OCR. Portanto, se um bloco foi identificado como verde, obtém-se, por meio da função de achar contornos,  as coordenadas da região a ser reconhecida pela etapa de OCR e, por meio de suas coordenadas, essa região é cortada da imagem original como ilustrado nas Figuras \ref{figura:ex2_original} e \ref{figura:ex2_tratado}.
+    Antes da etapa de OCR, a imagem passa por uma função de corte, na qual a região do símbolo a ser reconhecido é isolado com objetivo de diminuir possíveis erros da etapa de OCR. Portanto, se um bloco foi identificado como verde, obtém-se, por meio da função de achar contornos,  as coordenadas da região a ser reconhecida pela etapa de OCR e, por meio de suas coordenadas, essa região é cortada da imagem original como ilustrado nas Figuras \ref{figura:ex2_original} e \ref{figura:ex2_tratado}.
     
     \begin{figure}[H]
         \caption{Exemplo Tratametno para OCR - original}
@@ -184,7 +204,7 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
         \label{figura:ex2_tratado}
     \end{figure}
     
-    Na etapa do OCR, a imagem cortada é confrontada com uma lista de 10 possíveis valores, números entre 0 e 9, e por meio do módulo de Python pytesseract e do software Tesseract, o símbolos numéricos dos blocos verdes são reconhecidos.
+    Na etapa do OCR, a imagem cortada é confrontada com uma lista de 10 possíveis valores, números entre 0 e 9, e por meio do módulo de Python \textit{pytesseract} e do software \textit{Tesseract}, o símbolos numéricos dos blocos verdes são reconhecidos.
 
 
     \subsubsection{Envio das Informações}
@@ -192,5 +212,27 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
     
     Por fim, esta estrutura que contém os blocos e suas respectivas posições na imagem é ordenada baseada nas coordenadas do menor valor de X para o maior valor de X, em outras palavras, da esquerda para a direita da imagem. Esses valores então são  encapsulados em uma estrutura JSON e são enviados como retorno da API para o aplicativo jogo.
 
+    \subsubsection{Testes}
+    
+    Os primeiros testes foram realizados no decorrer do desenvolvimento do software com uma imagem genérica de um círculo cromático. Esses primeiros testes tinham o objetivo de ver os efeitos das funções do OpenCV em uma imagem com diversas cores.
+    
+    Após o desenvolvimento do software, foram realizados teste com imagens dos blocos com o objetivo de ajustar os parâmetros das máscaras de segmentação por cor e os tamanhos das áreas mínimas dos contornos para se considerar um bloco. Primeiramente foram realizados testes unitários com as imagens dos protótipos dos blocos reais, cada imagem com apenas um bloco em um fundo branco como ilustrado na Figura \ref{figura:ex_teste}. Nos próximos testes foi utilizado imagens no mesmo padrão de qualidade, porém com sequências de blocos.
+    
+       
+    \begin{figure}[H]
+        \caption{Exemplo de imagem de teste}
+        \centering
+        \includegraphics[width=8cm]{Imagens/Cap3/Blocos/Virar.png}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:ex_teste}
+    \end{figure}
+    
+    Após o sucessos na primeira bateria de testes, foram realizados testes com imagens mais próximas da realidade, isto é, dos blocos reais em diferentes iluminações e em diferentes superfícies. Os padrões de teste foi o mesmo utilizado na primeira etapa, ou seja, em um primeiro momento os testes foram realizados com imagens com apenas um bloco para somente então imagens com sequências de blocos.
+    
+    Durante a etapa de testes o algoritmo foi ajustado para reduzir ao máximo erros provocados por fenômenos como sombras, iluminação, cores de superfícies e distâncias dos blocos, porém o software ainda está sujeito a erros se não utilizado com imagens em qualidade adequada, como descrito no início desta seção.    
+
     \subsection{Integração dos Softwares}
+    
+    
+    
     
