@@ -42,17 +42,37 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
     
     Para o desenvolvimento do jogo foi utilizado a engine Unity 3D, assets gratuitos obtidos no site Flaticon e o editor de código Visual Studio Code, a linguagem de programação utilizada foi C\# (CSharp), o jogo foi desenvolvido para smartphones com a plataforma Android 5.0 ou superior, sendo necessário acesso a internet para que o mesmo funcione.
     
-    Ao iniciar o aplicativo, é apresentado para a criança o menu do jogo, onde ela consegue visualizar os desafios disponíveis e os desafios já resolvidos. O fluxograma apresentado na Figura \ref{figura:fluxo_telas} mostra o fluxo de telas do menu do jogo.
+    Ao iniciar o aplicativo, é apresentado para a criança a tela inicial. O fluxograma apresentado na Figura \ref{figura:fluxo_telas} mostra o fluxo de telas do menu apresentado.
     
     \begin{figure}[H]
         \caption{Fluxo de Telas do menu}
         \centering
-        \includegraphics[width=\linewidth]{Imagens/Cap4/fluxo_menu.jpeg}
+        \includegraphics[width=10cm]{Imagens/Cap4/fluxo_menu.jpg}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:fluxo_telas}
     \end{figure}
     
-    Ao jogar pela primeira vez é solicitado duas informações, nome e idade, para identificar a criança. Essas informações são salvas localmente no smartphone e serão enviadas para o servidor junto com o envio de cada solução dos desafios, todas as soluções, corretas ou não, serão salvas no banco de dados para análise estatística e desempenho de cada criança.
+    Na tela inicial, apresentada na Figura \ref{figura:menu_final}, a criança pode ser direcionada para a tela de créditos e desafios, resolvidos e disponíveis. 
+    
+    \begin{figure}[H]
+        \caption{Menu do Jogo}
+        \centering
+        \includegraphics[width=14cm]{Imagens/Cap4/menu_final.png}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:menu_final}
+    \end{figure}
+    
+    Ao jogar pela primeira vez é solicitado duas informações, nome e idade, para identificar a criança, conforme apresentado na Figura \ref{figura:tela_final_cadastro}. Essas informações são salvas localmente no smartphone e serão enviadas para o servidor junto com o envio de cada solução dos desafios, todas as soluções, corretas ou não, serão salvas no banco de dados para análise estatística e desempenho de cada criança.
+    
+    \begin{figure}[H]
+        \caption{Tela de Cadastro}
+        \centering
+        \includegraphics[width=14cm]{Imagens/Cap4/tela_final_cadastro.png}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:tela_final_cadastro}
+    \end{figure}
+    
+    O jogo possui 4 fases, cada uma delas apresenta um novo bloco lógico juntamente com o descarte correto de um tipo de lixo. Para a estruturação delas foi utilizado o componente Grid da Unity. Todas as fases possuem dois grids, um para o chão e outro para a decoração e cada um possui seu próprio \textit{titlemap}. Os objetos das fases como lixos, lixeiras e personagem são tratados individualmente.
     
     \subsubsection{Objetos e Controladores}
     
@@ -159,28 +179,32 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
 
     Através das máscaras HSV geradas, é realizada uma busca por contornos das cores que fazem parte do espectro determinado para cada cor.
     
-    Depois que os contornos são encontrados, verifica-se se algum contorno possui área maior que um valor X, o qual varia dependendo do bloco, como ilustrado na tabela de valores mínimos de áreas \ref{table:area_values}. Se a área do contorno for maior que o valor pré determinado, o algoritmo assume, considerando a limpeza de ruídos feita na etapa de segmentação de cores e o tamanho da área encontrado nesta etapa, que aquela seção da imagem corresponde a um bloco da cor da máscara testada. Portanto por meio desta etapa, já é possível reconhecer os blocos que possuem somente uma cor para um símbolo, isto é, laranja - esperar, amarelo - caminhar, azul - virar e roxo - repetir.
+    Depois que os contornos são encontrados, verifica-se se algum contorno possui área maior que um valor X, o qual varia dependendo do bloco, como ilustrado na Tabela \ref{table:area_values}. Se a área do contorno for maior que o valor pré determinado, o algoritmo assume, considerando a limpeza de ruídos feita na etapa de segmentação de cores e o tamanho da área encontrado nesta etapa, que aquela seção da imagem corresponde a um bloco da cor da máscara testada. Portanto por meio desta etapa, já é possível reconhecer os blocos que possuem somente uma cor para um símbolo, isto é, laranja - esperar, amarelo - caminhar, azul - virar e roxo - repetir.
     
+    \begin{table}[H]
+        \centering
+        \caption{Tabela de rotas do serviço}
+        \label{table:area_values}
+        \begin{tabular}{ |c|c| } 
+         \hline
+        Cor     & Mínimo valor de área \\
+         \hline
+        Azul    & 10000                \\
+         \hline
+        Amarelo & 7500                 \\
+         \hline
+        Laranja & 10000                \\
+         \hline
+        Roxo    & 12500                \\
+         \hline
+        Verde   & 10000                \\    [0.5ex]    
+         \hline
+        
+        \end{tabular}
+        \legend{\small{Fonte: o autor (2020)}}
+        
+    \end{table}
     
-    \begin{center}
-    \begin{tabular}{ |c|c| } 
-     \hline
-    Cor     & Mínimo valor de área \\
-     \hline
-    Azul    & 10000                \\
-     \hline
-    Amarelo & 7500                 \\
-     \hline
-    Laranja & 10000                \\
-     \hline
-    Roxo    & 12500                \\
-     \hline
-    Verde   & 10000                \\    [0.5ex]    
-     \hline
-    
-    \end{tabular}
-    \label{table:area_values}
-    \end{center}
         
     \subsubsection{Reconhecimento Numérico}
     Por fim, para o reconhecimento dos blocos numéricos se faz necessário uma etapa de OCR, ou seja, reconhecimento ótico de caracteres, pois não são possíveis descrevê-los totalmente pelas etapas anteriores, pois além da cor verde, também é preciso determinar seu símbolo.
@@ -188,18 +212,18 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
     Antes da etapa de OCR, a imagem passa por uma função de corte, na qual a região do símbolo a ser reconhecido é isolado com objetivo de diminuir possíveis erros da etapa de OCR. Portanto, se um bloco foi identificado como verde, obtém-se, por meio da função de achar contornos,  as coordenadas da região a ser reconhecida pela etapa de OCR e, por meio de suas coordenadas, essa região é cortada da imagem original como ilustrado nas Figuras \ref{figura:ex2_original} e \ref{figura:ex2_tratado}.
     
     \begin{figure}[H]
-        \caption{Exemplo Tratametno para OCR - original}
+        \caption{Exemplo Tratamento para OCR - original}
         \centering
-        \includegraphics[width=\linewidth]{Imagens/Cap4/ex2_original.PNG}
+        \includegraphics[width=14cm]{Imagens/Cap4/ex2_original.PNG}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:ex2_original}
     \end{figure}
     
     
     \begin{figure}[H]
-        \caption{Exemplo Tratametno para OCR - após tratamento}
+        \caption{Exemplo Tratamento para OCR - após tratamento}
         \centering
-        \includegraphics[width=8cm]{Imagens/Cap4/ex2_tratado.PNG}
+        \includegraphics[width=7cm]{Imagens/Cap4/ex2_tratado.PNG}
         \legend{\small{Fonte: o autor (2020)}}
         \label{figura:ex2_tratado}
     \end{figure}
@@ -208,7 +232,7 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
 
 
     \subsubsection{Envio das Informações}
-    Durante as etapas anteriores, na medida em que os blocos são reconhecidos, os seus significados e, por meio da função achar contornos, suas coordenadas são armazenadas em uma estrutura de dados python conhecida com tupla.
+    Durante as etapas anteriores, na medida em que os blocos são reconhecidos, os seus significados e, por meio da função achar contornos, suas coordenadas são armazenadas em uma estrutura de dados Python conhecida com tupla.
     
     Por fim, esta estrutura que contém os blocos e suas respectivas posições na imagem é ordenada baseada nas coordenadas do menor valor de X para o maior valor de X, em outras palavras, da esquerda para a direita da imagem. Esses valores então são  encapsulados em uma estrutura JSON e são enviados como retorno da API para o aplicativo jogo.
 
@@ -217,7 +241,6 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
     Os primeiros testes foram realizados no decorrer do desenvolvimento do software com uma imagem genérica de um círculo cromático. Esses primeiros testes tinham o objetivo de ver os efeitos das funções do OpenCV em uma imagem com diversas cores.
     
     Após o desenvolvimento do software, foram realizados teste com imagens dos blocos com o objetivo de ajustar os parâmetros das máscaras de segmentação por cor e os tamanhos das áreas mínimas dos contornos para se considerar um bloco. Primeiramente foram realizados testes unitários com as imagens dos protótipos dos blocos reais, cada imagem com apenas um bloco em um fundo branco como ilustrado na Figura \ref{figura:ex_teste}. Nos próximos testes foi utilizado imagens no mesmo padrão de qualidade, porém com sequências de blocos.
-    
        
     \begin{figure}[H]
         \caption{Exemplo de imagem de teste}
@@ -231,8 +254,53 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
     
     Durante a etapa de testes o algoritmo foi ajustado para reduzir ao máximo erros provocados por fenômenos como sombras, iluminação, cores de superfícies e distâncias dos blocos, porém o software ainda está sujeito a erros se não utilizado com imagens em qualidade adequada, como descrito no início desta seção.    
 
-    \subsection{Integração dos Softwares}
+    \subsection {Integração dos Softwares}
     
+    Para a integração dos softwares (jogo e reconhecimento dos blocos), foi utilizado a linguagem Python junto como framework Flask, transformando o software de reconhecimento em uma API com arquitetura REST, o diagrama da Figura \ref{figura:diagrama_acesso_integracao} representa o acesso ao serviço de reconhecimento.
+    
+    \begin{figure}[H]
+        \caption{Diagrama de acesso ao serviço de reconhecimento}
+        \centering
+        \includegraphics[width=15cm]{Imagens/Cap4/diagrama_acesso_integracao.jpg}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:diagrama_acesso_integracao}
+    \end{figure}
+    
+    O Serviço possui 3 rotas, sendo que, somente uma delas possui retorno gráfico ao acessar via navegador. A tabela \ref{tab:rotas} apresenta as rotas do serviço.
+    
+    \begin{table}[H]
+        \centering
+        \caption{Tabela de rotas do serviço}
+        \label{tab:rotas}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            {Rota} & {Metodos} & {Parâmetros}  \\ \hline
+            /solution & POST, PATCH & image, child, rightSolution \\ \hline
+            /dashboard & GET & childID \\ \hline
+        \end{tabular}
+        \legend{\small{Fonte: o autor (2020)}}
+    \end{table}
+    
+    A rota \textit{/solution} é responsável por gerenciar as soluções propostas. O método POST recebe a imagem da solução, através do parâmetro \textit{image}, executa as ações de reconhecimento apresentadas na seção anterior e após isso, salva no banco de dados a solução e as informações da criança, recebidas pelo parâmetro \textit{child}. O método PATCH atualiza se a solução foi ou não correta, usando o parâmetro \textit{rightSolution} em combinação com o parâmetro \textit{child}.
+    
+    A rota \textit{/dashboard} é responsável por apresentar o relatório para os professores/tutores. O parâmetro \textit{childID} é a identificação da criança a ser visualizada, caso esse parâmetro não seja passado, é apresentado o relatório com todas as crianças.
+    
+    Na arquitetura criada, a comunicação é sempre iniciada pelo smartphone com o jogo. Como o serviço é segregado do jogo, ele consegue trabalhar de forma independente, podendo se conectar a outros jogos e aplicativos, desde que, o padrão estabelecido para a comunicação seja respeitado. No jogo, não existe possibilidade de trabalhar independente, pois ele necessita do serviço para reconhecer os blocos na solução enviada, tornando obrigatório o acesso a Internet.
+    
+    \subsubsection{Padrão de comunicação}
+    
+    Para possibilitar a integração entre o jogo e o software de reconhecimento, foi definido um padrao de resposta da API. A resposta da rota \textit{/solution} para quando é submetido uma solução através do método POST contém um encapsulador, representado pela propriedade \textit{blocks}. Esse encapsulamento da resposta, possibilita a interpretação do JSON recebido na Unity 3D, visto que, para que consiga ser interpretado, todas as propriedades do JSON devem ser traduzidas para classes dentro do jogo, O conteúdo retornado nessa propriedade é uma lista com os objetos que representam os blocos, conforme apresentado na Figura \ref{figura:json_retorno}.
+    
+    \begin{figure}[H]
+        \caption{JSON de retorno}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/Cap4/json_retorno.png}
+        \legend{\small{Fonte: o autor (2020)}}
+        \label{figura:json_retorno}
+    \end{figure}
+    
+    O objeto que representa o bloco possui uma propriedade, \textit{name}, que contém o nome do bloco. Caso o bloco identificado seja o bloco numérico, o mesmo retorna o seu respectivo numero precedido da palavra \textit{Number}.
+    Ao receber a lista de blocos, a Unity os converte em objetos, representados pela classe \textit{Block}. Quando é identificado a presença de um bloco de Loop, o mesmo é convertido para a classe \textit{Loop}. Essa classe herda a classe \textit{Block}, e possui um acréscimo de duas propriedades, \textit{repeatTimes} e \textit{blocks} para identificar quantas vezes é necessário executar os blocos dentro do loop.
     
     
     
