@@ -24,7 +24,7 @@
         \label{figura:alteracao_bloco_numerico}
     \end{figure}
     
-    As peças, impressas na cor branca, foram coloridas utilizando tinta de tecido nas cores verde, amarelo, laranja e roxo conforme apresentado na Figura \ref{figura:blocos_pintados}
+    As peças, impressas na cor branca, foram coloridas nas cores verde, amarelo, laranja e roxo conforme apresentado na Figura \ref{figura:blocos_pintados}
     
     \begin{figure}[H]
         \caption{Alteração do bloco numérico}
@@ -40,7 +40,7 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
 
     \subsection{Jogo}
     
-    Para o desenvolvimento do jogo foi utilizado a engine Unity 3D, assets gratuitos obtidos no site Flaticon e o editor de código Visual Studio Code, a linguagem de programação utilizada foi C\# (CSharp), o jogo foi desenvolvido para smartphones com a plataforma Android 5.0 ou superior, sendo necessário acesso a internet para que o mesmo funcione.
+    Para o desenvolvimento do jogo foi utilizada a \textit{engine} Unity 3D, \textit{assets} gratuitos obtidos no site Flaticon \cite{flaticon} e o editor de código Visual Studio Code, a linguagem de programação utilizada foi C\# (CSharp), o jogo foi desenvolvido para smartphones com a plataforma Android 5.0 ou superior, sendo necessário acesso a internet para que o mesmo funcione.
     
     Ao iniciar o aplicativo, é apresentado para a criança a tela inicial. O fluxograma apresentado na Figura \ref{figura:fluxo_telas} mostra o fluxo de telas do menu apresentado.
     
@@ -72,7 +72,7 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
         \label{figura:tela_final_cadastro}
     \end{figure}
     
-    O jogo possui 4 fases, cada uma delas apresenta um novo bloco lógico juntamente com o descarte correto de um tipo de lixo. Para a estruturação delas foi utilizado o componente Grid da Unity. Todas as fases possuem dois grids, um para o chão e outro para a decoração e cada um possui seu próprio \textit{titlemap}. Os objetos das fases como lixos, lixeiras e personagem são tratados individualmente.
+    O jogo possui 4 fases, cada uma delas apresenta um novo bloco lógico juntamente com o descarte correto de um tipo de lixo. Para a estruturação delas foi utilizado o componente Grid da Unity. Todas as fases possuem dois \textit{grids}, um para o chão e outro para a decoração e cada um possui seu próprio \textit{titlemap}. Os objetos das fases como lixos, lixeiras e personagem são tratados individualmente.
     
     \subsubsection{Objetos e Controladores}
     
@@ -112,6 +112,7 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
     
     
     \subsection{Software de reconhecimento dos blocos}
+    O algoritmo proposto no capítulo 3, no fluxograma ilustrado na figura \ref{figura:visao_geral},  foi levemente alterado, pois não contempla todas as etapas do problema do reconhecimento dos blocos, e após testes durante o desenvolvimento, encontrou-se melhores formas de resolver o problema proposto.
     
     O software de reconhecimento dos blocos é uma API, isto é, uma interface de programação de aplicações,  desenvolvida em Python. Os principais módulos utilizados no desenvolvimento deste software são \textit{OpenCV, numpy, pytesseract e flask}.
 
