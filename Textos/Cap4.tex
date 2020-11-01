@@ -1,6 +1,6 @@
 \chapter{Desenvolvimento} \label{cap:desenvolvimento}
 
-\section{Hardware}
+\section{Blocos}
 
     Para a impressão dos blocos foi utilizado a impressora 3D SnapMaker com o filamento branco no material PETG. Foi impresso uma peça nas medidas definidas no capitulo 3 para testes de material e tamanho conforme apresentado na Figura \ref{figura:teste_bloco}.
     
@@ -8,11 +8,11 @@
         \caption{Teste de tamanho e material do bloco físico}
         \centering
         \includegraphics[width=\linewidth]{Imagens/Cap4/teste_bloco.jpeg}
-        \legend{\small{Fonte: o autor (2020)}}
+        \legend{\small{Fonte: os autores (2020)}}
         \label{figura:teste_bloco}
     \end{figure}
     
-    Nos testes, verificamos que o material escolhido estava dentro dos padrões aceitáveis, mantendo a peça conforme o planejado. Analisamos o tamanho da peça impressa e identificamos que estava muito grande, podendo dificultar a captura da solução pela criança. O tamanho do bloco foi reduzido para 7cm x 7cm x 5mm e um novo teste foi realizado, obtendo sucesso.
+    Nos testes, foi verificado que o material escolhido estava dentro dos padrões aceitáveis, mantendo a peça conforme o planejado. Analisamos o tamanho da peça impressa e identificamos que estava muito grande, podendo dificultar a captura da solução pela criança. O tamanho do bloco foi reduzido para 7cm x 7cm x 5mm e um novo teste foi realizado, obtendo sucesso.
     
     Para facilitar a identificação dos blocos numéricos, alteramos o encaixe  do bloco de loop para que o bloco numérico possa encaixar lateralmente, deixando todos os blocos com encaixes laterais conforme apresentado na Figura \ref{figura:alteracao_bloco_numerico}.
     
@@ -20,7 +20,7 @@
         \caption{Alteração do bloco numérico}
         \centering
         \includegraphics[width=\linewidth]{Imagens/Cap4/alteracao_bloco_numerico.jpg}
-        \legend{\small{Fonte: o autor (2020)}}
+        \legend{\small{Fonte: os autores (2020)}}
         \label{figura:alteracao_bloco_numerico}
     \end{figure}
     
@@ -30,7 +30,7 @@
         \caption{Alteração do bloco numérico}
         \centering
         \includegraphics[width=\linewidth]{Imagens/Cap4/blocos_pintados.jpeg}
-        \legend{\small{Fonte: o autor (2020)}}
+        \legend{\small{Fonte: os autores (2020)}}
         \label{figura:blocos_pintados}
     \end{figure}
 
@@ -62,7 +62,7 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
         \label{figura:menu_final}
     \end{figure}
     
-    Ao jogar pela primeira vez é solicitado duas informações, nome e idade, para identificar a criança, conforme apresentado na Figura \ref{figura:tela_final_cadastro}. Essas informações são salvas localmente no smartphone e serão enviadas para o servidor junto com o envio de cada solução dos desafios, todas as soluções, corretas ou não, serão salvas no banco de dados para análise estatística e desempenho de cada criança.
+    Ao jogar pela primeira vez é solicitado duas informações, nome e idade, para identificar a criança, conforme apresentado na Figura \ref{figura:tela_final_cadastro}. Essas informações são salvas localmente no \textit{smartphone} e serão enviadas para o servidor junto com o envio de cada solução dos desafios, todas as soluções, corretas ou não, serão salvas no banco de dados para análise estatística e desempenho de cada criança.
     
     \begin{figure}[H]
         \caption{Tela de Cadastro}
@@ -133,19 +133,17 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
     \begin{figure}[H]
         \caption{Fluxograma de Reconhecimento dos Blocos}
         \centering
-        \includegraphics[width=\linewidth]{Imagens/Cap4/fluxo.PNG}
-        \legend{\small{Fonte: o autor (2020)}}
+        \includegraphics[width=\linewidth]{Imagens/Cap4/fluxograma_reconhecimento.PNG}
+        \legend{\small{Fonte: os autores (2020)}}
         \label{figura:fluxo}
     \end{figure}
 
+    \subsubsection{Aquisição e Conversão de BGR para HSV}
+    
+   Após o recebimento da imagem através do protocolo http POST, é necessário converter a imagem de bytes para um vetor numpy através do comando \textit{fromstring} do módulo numpy, pois é neste formato que o módulo OpenCV é capaz de ler as imagens. 
 
-    \subsubsection{Aquisição}
-    
-    Após o recebimento da imagem através do protocolo http POST, é necessário converter a imagem de bytes para um vetor numpy através do comando \textit{fromstring} do módulo numpy, pois é neste formato que o módulo OpenCV é capaz de ler as imagens. 
-    
     Uma etapa comum em visão computacional é o redimensionamento  das imagens, porém neste caso não se fez necessário o redimensionamento pois as imagens já são enviadas em um tamanho pré definido pelo aplicativo jogo.
-
-    \subsubsection{Conversão de BGR para HSV}
+    
     O padrão HSV consiste em cor, retratado como \textit{Hue}; a saturação da cor por \textit{Saturation} e por fim o brilho, chamado de \textit{value}, por conta disso possui o nome HSV.
     
     A etapa de conversão de BGR (\textit{blue}, \textit{green} e \textit{red}) para HSV é fundamental, pois é por meio deste padrão que as máscaras, utilizadas para isolar cada cor da imagem é criada. Portanto é por conta desta etapa que a segmentação por cores se torna possível.
