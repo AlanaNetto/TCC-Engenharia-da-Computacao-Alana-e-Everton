@@ -253,6 +253,10 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
     
     Durante a etapa de testes o algoritmo foi ajustado para reduzir ao máximo erros provocados por fenômenos como sombras, iluminação, cores de superfícies e distâncias dos blocos, porém o software ainda está sujeito a erros se não utilizado com imagens em qualidade adequada, como descrito no início desta seção.    
 
+
+    \subsection{Relatórios}
+    
+    
     \subsection {Integração dos Softwares}
     
     Para a integração dos softwares (jogo e reconhecimento dos blocos), foi utilizado a linguagem Python junto como framework Flask, transformando o software de reconhecimento em uma API com arquitetura REST, o diagrama da Figura \ref{figura:diagrama_acesso_integracao} representa o acesso ao serviço de reconhecimento.
@@ -265,7 +269,7 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
         \label{figura:diagrama_acesso_integracao}
     \end{figure}
     
-    O Serviço possui 3 rotas, sendo que, somente uma delas possui retorno gráfico ao acessar via navegador. A tabela \ref{tab:rotas} apresenta as rotas do serviço.
+    O serviço possui 2 rotas, sendo que, somente uma delas possui retorno gráfico ao acessar via navegador. A tabela \ref{tab:rotas} apresenta as rotas do serviço.
     
     \begin{table}[H]
         \centering
@@ -273,7 +277,7 @@ Para apresentar todos os softwares que compõem o aplicativo, esta seção é di
         \label{tab:rotas}
         \begin{tabular}{|c|c|c|}
             \hline
-            {Rota} & {Metodos} & {Parâmetros}  \\ \hline
+            {Rota} & {Métodos} & {Parâmetros}  \\ \hline
             /solution & POST, PATCH & image, child, rightSolution \\ \hline
             /dashboard & GET & childID \\ \hline
         \end{tabular}
