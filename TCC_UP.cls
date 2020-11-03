@@ -3,6 +3,11 @@
 % | ABNT NBR 14724:2011: Informação e documentação - Trabalhos acadêmicos |
 % |                              Apresentação                             |
 %  -----------------------------------------------------------------------
+% |        Classe de Trabalhos Acadêmicos - Universidade Positivo         |
+% |     Produção: Eduardo J Alberti      Revisão: Veronica I. Quandt      |
+%  -----------------------------------------------------------------------
+% |                            Versão 2.0C                                |
+%  -----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{TCC_UP}
@@ -22,6 +27,9 @@
 \usepackage[alf]{abntex2cite}
 \setlength{\parindent}{1.3cm}
 \setlength{\parskip}{0.2cm}
+\usepackage{nomencl}
+
+\makenomenclature
 
 \graphicspath{{Imagens/}}
 
@@ -29,16 +37,25 @@
 \RequirePackage[font=normalsize]{caption}
 \renewcommand{\ABNTEXchapterfont}{\bfseries}
 \renewcommand{\ABNTEXchapterfontsize}{\normalsize}
-    \renewcommand{\ABNTEXsectionfont}{}
+    \renewcommand{\ABNTEXsectionfont}{\mdseries}
     \renewcommand{\ABNTEXsectionfontsize}{\normalsize}
 \renewcommand{\ABNTEXsubsectionfont}{\bfseries}
 \renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
     \renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+    \renewcommand{\ABNTEXsubsubsectionfont}{\mdseries}
 \renewcommand{\ABNTEXsubsubsubsectionfont}{\itshape}
 
 \setlrmarginsandblock{3cm}{2cm}{*}
 \setulmarginsandblock{3cm}{2cm}{*}
 \checkandfixthelayout
+
+%  -----------------------------------------------------------------------
+% |                            Altera Sumário                             |
+%  -----------------------------------------------------------------------
+\renewcommand{\cftsectionfont}{\normalfont\Capitalize}
+\renewcommand{\cftsubsectionfont}{\bfseries}
+\renewcommand{\cftsubsubsectionfont}{\normalfont}
+\renewcommand{\cftparagraphfont}{\normalfont\itshape}
 
 %  -----------------------------------------------------------------------
 % |                    Função Curso e ImprimeCurso                        |
@@ -70,27 +87,53 @@
 \renewcommand{\cftquadroname}{\quadroname\space} 
 \renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
 
-\setfloatlocations{quadro}{hbtp}
+\setfloatlocations{grafico}{hbtp}
+
+%  -----------------------------------------------------------------------
+% |                      Cria o Ambiente Gráfico                           |
+%  -----------------------------------------------------------------------
+\newcommand{\graficoname}{Gráfico}
+\newcommand{\listofgraficosname}{Lista de Gráficos}
+
+\newfloat[chapter]{grafico}{los}{\graficoname}
+\newlistof{listofgraficos}{los}{\listofgraficosname}
+\newlistentry{grafico}{los}{0}
+
+\setfloatadjustment{grafico}{\centering}
+\counterwithout{grafico}{chapter}
+\renewcommand{\cftgraficoname}{\graficoname\space} 
+\renewcommand*{\cftgraficoaftersnum}{\hfill--\hfill}
+
+\setfloatlocations{grafico}{hbtp}
+
 \addto\captionsbrazil{
     \renewcommand{\listfigurename}{Lista de Figuras}
 }
 
 \captionsetup{singlelinecheck = false, justification=raggedright, labelsep=space}
 
+\renewcommand{\nomname}{\listadesiglasname}
+
 %  -----------------------------------------------------------------------
 % |                        Constrói a capa                                |
 %  -----------------------------------------------------------------------
+
+% ------------------ Definições Básicas da Capa --------------------------
+\instituicao{Universidade Positivo} 
+    \local{Curitiba}
+    \data{\the\year}
+
+\preambulo{\imprimirtipotrabalho apresentada como requisito parcial de aprovação da disciplina de Trabalho de Conclusão de Curso de \imprimircurso  da \imprimirescola  da \imprimirinstituicao.}
+
 \renewcommand{\imprimircapa}{
   \begin{capa}
     \center
-    \ABNTEXchapterfont\bfseries\Large \MakeUppercase\imprimirinstituicao \\
-    \ABNTEXchapterfont\bfseries\Large \MakeUppercase\imprimirescola \\
-    \ABNTEXchapterfont\bfseries\Large \MakeUppercase\imprimircurso \\
+    \ABNTEXchapterfont\bfseries\large \MakeUppercase\imprimirinstituicao \\
     \vspace*{3cm}
     {\ABNTEXchapterfont\large\MakeUppercase\imprimirautor}
     \vfill
     \begin{center}
-        \ABNTEXchapterfont\bfseries\LARGE \MakeUppercase\imprimirtitulo
+        \ABNTEXchapterfont\bfseries\large \MakeUppercase\imprimirtitulo
     \end{center}
     \vfill
     \large\MakeUppercase\imprimirlocal \\
@@ -109,7 +152,7 @@
     {\ABNTEXchapterfont\large\MakeUppercase\imprimirautor}
     \vspace*{\fill}\vspace*{\fill}
     \begin{center}
-        \ABNTEXchapterfont\bfseries\Large\MakeUppercase\imprimirtitulo
+        \ABNTEXchapterfont\bfseries\large\MakeUppercase\imprimirtitulo
     \end{center}
     \vspace*{\fill}
 
@@ -134,4 +177,3 @@
 \makeatother
 
 \setlength\cftbeforechapterskip{0cm}
-
