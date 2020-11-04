@@ -4,11 +4,70 @@ Neste capítulo são detalhados os testes de desenvolvimento e performance do ap
 \section{Testes de Desenvolvimento}
 
 
-\subsection{\textbf{Testes de Tempo de Resposta do Reconhecimento}}
+\subsection{\textbf{Teste de Tempo de Resposta do Reconhecimento}}
 
+Após o término do desenvolvimento do protótipo, foram realizados testes para mensurar o tempo médio de resposta do algoritmo de reconhecimento por quantidade de bloco. A metodologia adotada para esse teste foi capturar uma amostra de imagens com blocos normais, imagens contendo 1 bloco, 2 blocos e com 3 blocos e uma amostra de imagens com com blocos numéricos, também com imagens contendo 1 bloco, 2 blocos e 3 blocos como ilustrado na Figura \ref{figura:ttr}. Por meio dessas imagens, foram realizadas 5 medições do tempo de resposta do algoritmo de reconhecimento por quantidade de blocos, isto é, 5 medições das imagens com apenas 1 bloco, 5 medições das imagens com 2 blocos e por fim 3 medições das imagens com 3 blocos. Após todos os valores coletados, foi calculado uma média simples por quantidade de blocos e por tipos de blocos a fim de diminuir possíveis eventualidades que afetassem o tempo de resposta. O objetivo deste teste é verificar se há diferença no tempo de resposta entre blocos normais e blocos numéricos, os quais passam pela etapa de reconhecimento óptico de caracteres.
 
+\begin{figure}[H]
+    \caption{Exemplos de Imagens para Teste de Tempo de Resposta}
+    \centering
+    \includegraphics[width=15cm]{Imagens/Cap5/ttr.png}
+    \legend{\small{Fonte: os autores (2020)}}
+    \label{figura:ttr}
+\end{figure}
 
-\subsection{\textbf{Teste de Taxa de Assertividade}}
+Como pode-se ver na tabela \ref{table:tempo_resposta} e no gráfico ilustrado na Figura \ref{figura:ttr_grafico} que derivam do resultado do teste de tempos de resposta, existe uma diferença considerável no tempo de resposta entre blocos normais e blocos numéricos e essa diferença tende a crescer considerando o acréscimo de blocos. Pode-se notar também que o tempo de resposta dos blocos normais tende a se manter estável mesmo com a inserção de mais blocos normais. Porém, pode-se notar também que o tempo de resposta tende a aumentar consideravelmente com o acréscimo de blocos numéricos. 
+
+    \begin{table}[H]
+        \centering
+        \caption{Tempo(s) de resposta por quantidade e tipo de bloco }
+        \label{table:tempo_resposta}
+        \begin{tabular}{ |c|c|c| } 
+         \hline
+        Quantidade de Blocos & Blocos Normais & Blocos Numéricos \\
+         \hline
+        1 & 0.0384s & 0.0714s \\
+         \hline
+        2 & 0.0434s & 0.1084s\\
+         \hline
+        3 & 0.0392s & 0.1503s\\    [0.5ex]    
+         \hline
+        
+        \end{tabular}
+        \legend{\small{Fonte: os autores (2020)}}
+    \end{table}
+
+\begin{figure}[H]
+    \caption{Gráfico tempo de resposta}
+    \centering
+    \includegraphics[width=14cm]{Imagens/Cap5/ttr_grafico.PNG}
+    \legend{\small{Fonte: os autores (2020)}}
+    \label{figura:ttr_grafico}
+\end{figure}
+
+\subsection{\textbf{Teste de Taxa de Assertividade do Reconhecimento}}
+
+Após o término do desenvolvimento do protótipo, foram realizados testes para mensurar a taxa de assertividade do aplicativo jogo em relação ao reconhecimento dos blocos. A metodologia adotada para esse teste foi capturar uma amostra de imagens de uma mesma sequência de blocos, das quais uma metade dessas imagens são capturadas com iluminação adequada e seguindo as recomendações do aplicativo jogo, e a outra metade das imagens capturadas com iluminação inadequada e sem seguir as recomendações de captura do aplicativo jogo. E por meio dessas imagens, calcular as taxas de acerto para os dois tipos de imagens com o objetivo de verificar e mensurar a importância de usar o aplicativo jogo em um ambiente iluminado adequadamente e seguindo as recomendações do aplicativo jogo em relação a captura das imagens. Uma imagem considerada iluminada adequadamente é uma imagem que está sob  iluminação semelhante a iluminação utilizada para fazer a calibração do algoritmo de reconhecimento, e recomenda-se que a calibração seja realizada em um ambiente iluminado uniformemente com luz branca. 
+
+Para o teste de assertividade, foi coletado uma amostra de 20 imagens com a sequência andar, andar, esperar, virar e andar. Das 20 imagens, 10 imagens foram coletadas sob iluminação semelhante a utilizada na calibração do algoritmo e seguindo a orientação de tamanho sugerida na tela de captura de imagem do aplicativo jogo, como ilustrado na Figura \ref{figura:tta_boa}. As outras 10 imagens, da mesma sequência, foram coletadas sob iluminação diferente da utilizada para calibração, com distâncias diferentes das recomendadas pelo aplicativo jogo e sob trepidações no momento da captura, ou seja, imagens borradas, como ilustrado na Figura \ref{figura:tta_ruim}.
+
+\begin{figure}[H]
+    \caption{Imagens adequadas para teste de assertividade}
+    \centering
+    \includegraphics[width=15cm]{Imagens/Cap5/tta_boa.PNG}
+    \legend{\small{Fonte: os autores (2020)}}
+    \label{figura:tta_boa}
+\end{figure}
+
+\begin{figure}[H]
+    \caption{Imagens não adequadas para teste de assertividade}
+    \centering
+    \includegraphics[width=15cm]{Imagens/Cap5/tta_ruim.PNG}
+    \legend{\small{Fonte: os autores (2020)}}
+    \label{figura:tta_ruim}
+\end{figure}
+
+O resultado do teste foi, das 10 imagens iluminadas adequadamente e capturadas sob as recomendações do aplicativo jogo, o algoritmo de reconhecimento acertou 9 das sequências dessas imagens, portanto obteve uma taxa de assertividade de 90 porcento. Porém, das 10 imagens iluminadas inadequadamente e que não foram capturadas seguindo as recomendações do aplicativo, o algoritmo acertou apenas 5 sequências das 10 imagens, ou seja, obteve uma taxa de assertividade de 50 porcento. Portanto, pode-se concluir que é fundamental que o aplicativo jogo seja utilizado em um ambiente adequadamente iluminado e seguindo as recomendações de captura de imagem a fim de garantir um bom funcionamento do aplicativo jogo.
 
 
 \section{Testes Práticos}
