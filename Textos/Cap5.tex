@@ -1,5 +1,5 @@
 \chapter{Testes e Resultados}\label{cap:testes_e_resultados}
-Neste capítulo são descritos os testes de desenvolvimento e performance do aplicativo, além disso, contém uma descrição dos resultados dos testes práticos com crianças.
+Neste capítulo são descritos os testes de desenvolvimento e performance do aplicativo. Além disso, contém também uma descrição dos resultados dos testes práticos com crianças.
 
 \section{Testes de Desenvolvimento}
 
@@ -8,7 +8,7 @@ Nesta seção são detalhados os testes de desenvolvimento e performance do soft
 
 \subsection{\textbf{Teste de Tempo de Resposta do Reconhecimento}}
 
-Após o término do desenvolvimento do protótipo, foram realizados testes para mensurar o tempo médio de resposta do algoritmo de reconhecimento por quantidade de blocos. A metodologia adotada para esse teste foi capturar uma amostra de imagens contendo 1 bloco, 2 blocos e 3 blocos, separados em blocos normais e númericos como ilustrado na Figura \ref{figura:ttr}. Por meio dessas imagens, foram realizadas 5 medições do tempo de resposta do algoritmo de reconhecimento por quantidade de blocos, isto é, 5 medições das imagens com apenas 1 bloco, 5 medições das imagens com 2 blocos e por fim 5 medições das imagens com 3 blocos. Após todos os valores coletados, foi calculada uma média simples por quantidade de blocos e por tipos de blocos a fim de diminuir possíveis eventualidades que afetassem o tempo de resposta. O objetivo deste teste é verificar se há diferença no tempo de resposta entre blocos normais e blocos numéricos, sendo que estes passam pela etapa de reconhecimento óptico de caracteres.
+Após o término do desenvolvimento do protótipo, foram realizados testes para mensurar o tempo médio de resposta do algoritmo de reconhecimento por quantidade de blocos. A metodologia adotada para esse teste foi capturar uma amostra de imagens contendo 1 bloco, 2 blocos e 3 blocos, separados em blocos normais e númericos como ilustrado na Figura \ref{figura:ttr}. Por meio dessas imagens, foram realizadas 50 medições do tempo de resposta do algoritmo de reconhecimento por quantidade de blocos, isto é, 50 medições das imagens com apenas 1 bloco, 50 medições das imagens com 2 blocos e por fim 50 medições das imagens com 3 blocos. Após todos os valores coletados, foi calculada uma média simples por quantidade de blocos e por tipo de bloco a fim de diminuir possíveis eventualidades que pudessem provocar alterações no tempo de resposta. O objetivo deste teste é verificar se há diferença no tempo de resposta entre blocos normais e blocos numéricos, sendo que estes passam pela etapa de reconhecimento óptico de caracteres.
 
 \begin{figure}[H]
     \caption{Exemplos de imagens para teste de tempo de resposta}
@@ -18,7 +18,7 @@ Após o término do desenvolvimento do protótipo, foram realizados testes para 
     \label{figura:ttr}
 \end{figure}
 
-Como pode-se ver na tabela \ref{table:tempo_resposta} e no gráfico ilustrado na Figura \ref{figura:ttr_grafico} que derivam do resultado do teste de tempos de resposta, existe uma diferença considerável no tempo de resposta entre blocos normais e blocos numéricos e essa diferença tende a crescer considerando o acréscimo de blocos. Pode-se notar também que o tempo de resposta dos blocos normais tende a se manter estável mesmo com a inserção de mais blocos normais. Porém, pode-se notar também que o tempo de resposta tende a aumentar consideravelmente com o acréscimo de blocos numéricos. 
+Como pode-se ver na tabela \ref{table:tempo_resposta} e no gráfico ilustrado na Figura \ref{figura:ttr_grafico} que derivam do resultado do teste de tempos de resposta, existe uma diferença considerável no tempo de resposta entre blocos normais e blocos numéricos e essa diferença tende a crescer considerando o acréscimo de blocos numéricos. Pode-se notar também que o tempo de resposta dos blocos normais tende a se manter estável mesmo com a inserção de mais blocos normais. Porém, pode-se notar também que o tempo de resposta tende a aumentar consideravelmente com o acréscimo de blocos numéricos. 
 
     \begin{table}[H]
         \centering
@@ -28,11 +28,11 @@ Como pode-se ver na tabela \ref{table:tempo_resposta} e no gráfico ilustrado na
          \hline
         Quantidade de Blocos & Blocos Normais & Blocos Numéricos \\
          \hline
-        1 & 38.4ms & 71.4ms \\
+        1 & 37.1ms & 427.7ms \\
          \hline
-        2 & 43.4ms & 108.4ms\\
+        2 & 39.8ms & 674.1ms\\
          \hline
-        3 & 39.2ms & 150.3ms\\    [0.5ex]    
+        3 & 39.7ms & 987.1ms\\    [0.5ex]    
          \hline
         
         \end{tabular}
@@ -51,7 +51,7 @@ Como pode-se ver na tabela \ref{table:tempo_resposta} e no gráfico ilustrado na
 
 Após o término do desenvolvimento do protótipo, foram realizados testes para mensurar a taxa de acerto do aplicativo em relação ao reconhecimento dos blocos. A metodologia adotada para esse teste foi capturar uma amostra de imagens de uma mesma sequência de blocos, das quais uma metade dessas imagens são capturadas com iluminação adequada e seguindo as recomendações do aplicativo jogo, e a outra metade das imagens capturadas com iluminação inadequada e sem seguir as recomendações de captura do aplicativo jogo. E, por meio dessas imagens, calcular as taxas de acerto para os dois tipos de imagens com o objetivo de verificar e mensurar a importância de usar o aplicativo jogo em um ambiente iluminado adequadamente e seguindo as recomendações do aplicativo jogo em relação à captura das imagens. Uma imagem considerada iluminada adequadamente é uma imagem que está sob  iluminação semelhante a iluminação utilizada para fazer a calibração do algoritmo de reconhecimento, e recomenda-se que a calibração seja realizada em um ambiente iluminado uniformemente com luz branca. 
 
-Para o teste de taxa de acerto, foi coletado uma amostra de 20 imagens com a sequência andar, andar, esperar, virar e andar. Das 20 imagens, 10 imagens foram coletadas sob iluminação semelhante à utilizada na calibração do algoritmo e seguindo a orientação de tamanho sugerida na tela de captura de imagem do aplicativo jogo, como ilustrado na Figura \ref{figura:tta_boa}. As outras 10 imagens, da mesma sequência, foram coletadas sob iluminação diferente da utilizada para calibração, com distâncias diferentes das recomendadas pelo aplicativo jogo e sob trepidações no momento da captura, ou seja, imagens borradas, como ilustrado na Figura \ref{figura:tta_ruim}.
+Para o teste de taxa de acerto, foi coletado uma amostra de 200 imagens com blocos andar, esperar, virar e loop. Das 200 imagens, 100 imagens foram coletadas sob iluminação semelhante à utilizada na calibração do algoritmo e seguindo a orientação de tamanho sugerida na tela de captura de imagem do aplicativo jogo, como ilustrado na Figura \ref{figura:tta_boa}. As outras 100 imagens, foram coletadas sob iluminação diferente da utilizada para calibração, com distâncias diferentes das recomendadas pelo aplicativo jogo e sob trepidações no momento da captura, ou seja, imagens borradas, como ilustrado na Figura \ref{figura:tta_ruim}.
 
 \begin{figure}[H]
     \caption{Imagens adequadas para teste taxa de acerto}
@@ -69,7 +69,7 @@ Para o teste de taxa de acerto, foi coletado uma amostra de 20 imagens com a seq
     \label{figura:tta_ruim}
 \end{figure}
 
-O resultado do teste foi, das 10 imagens iluminadas adequadamente e capturadas sob as recomendações do aplicativo jogo, o algoritmo de reconhecimento acertou 9 das sequências dessas imagens, portanto obteve uma taxa de acerto de 90\%. Porém, das 10 imagens iluminadas inadequadamente e que não foram capturadas seguindo as recomendações do aplicativo, o algoritmo acertou apenas 5 sequências das 10 imagens, ou seja, obteve uma taxa de acerto de 50\%. Portanto, pode-se concluir que é fundamental que o aplicativo jogo seja utilizado em um ambiente adequadamente iluminado e seguindo as recomendações de captura de imagem a fim de garantir um bom funcionamento do aplicativo jogo.
+O resultado do teste foi, das 100 imagens iluminadas adequadamente e capturadas sob as recomendações do aplicativo jogo, o algoritmo de reconhecimento acertou 92 das sequências dessas imagens, portanto obteve uma taxa de acerto de 92\%. Porém, das 100 imagens iluminadas inadequadamente e que não foram capturadas seguindo as recomendações do aplicativo, o algoritmo acertou apenas 58 sequências das 100 imagens, ou seja, obteve uma taxa de acerto de 58\%. Portanto, pode-se concluir que é fundamental que o aplicativo jogo seja utilizado em um ambiente adequadamente iluminado e seguindo as recomendações de captura de imagem a fim de garantir um bom funcionamento do aplicativo jogo.
 
 
 \section{Testes Práticos}
